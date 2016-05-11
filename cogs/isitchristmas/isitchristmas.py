@@ -4,13 +4,14 @@ from random import choice
 from datetime import datetime
 import os
 
-class isitchristmas:
+class Isitchristmas:
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command(no_pm=True)
 
     async def isitchristmas(self):
+        """Tells you if it is Christmas or not"""
         time = datetime.now()
         month = time.month
         day = time.day
@@ -27,5 +28,5 @@ class isitchristmas:
 
 
 def setup(bot):
-    n = isitchristmas(bot)
+    n = Isitchristmas(bot)
     bot.add_cog(n)
