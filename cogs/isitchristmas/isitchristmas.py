@@ -5,9 +5,8 @@ from datetime import datetime
 import os
 
 class isitchristmas:
-
     def __init__(self, bot):
-    self.bot = bot
+        self.bot = bot
 
     @commands.command(no_pm=True)
 
