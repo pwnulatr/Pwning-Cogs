@@ -7,7 +7,7 @@ class Isitchristmas:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(no_pm=True)
+    @commands.command(no_pm=False)
 
     async def isitchristmas(self):
         """Tells you if it is Christmas or not"""
