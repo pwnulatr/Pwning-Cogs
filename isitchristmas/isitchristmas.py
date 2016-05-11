@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from random import choice
 from datetime import datetime
-import os
 
 class Isitchristmas:
     def __init__(self, bot):
