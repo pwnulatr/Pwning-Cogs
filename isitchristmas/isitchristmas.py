@@ -25,6 +25,23 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 
+    @commands.command(no_pm=False)
+
+    async def isithalloween(self):
+        """Tells you if it is Halloween or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi", "Spoopy time guise :jack_o_lantern: :ghost: :candy: :skull_crossbones: :spider_web :skull:", "HAPPY HALL:jack_o_lantern:WEEN", "BUST OUT THE PUMPKIN PIE Y'ALL, IT'S SPOOPY HALLOWEEN TIME!"]
+
+        if month == 10:
+            if day == 31:
+                await self.bot.say(choice(yes))
+            else:
+                await self.bot.say(choice(no))
+        else:
+            await self.bot.say(choice(no))
 
 def setup(bot):
     n = Isitchristmas(bot)
