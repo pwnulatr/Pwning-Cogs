@@ -90,7 +90,7 @@ async def isitindepenenceday(self):
     yes = ["Yes", "Yee", "Das right boi", "YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!", "U :gun: S :boom: A :fireworks:"]
 
     if month == 7:
-        if day == 4
+        if day == 4:
             await self.bot.say(choose(yes))
         else:
             await self.bot.say(choose(no))
