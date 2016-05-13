@@ -24,7 +24,7 @@ class Isitchristmas:
                 await self.bot.say(choice(no))
         else:
             await self.bot.say(choice(no))
-
+# ----------------------------------------------------------------------------
     @commands.command(no_pm=False)
 
     async def isithalloween(self):
@@ -42,7 +42,61 @@ class Isitchristmas:
                 await self.bot.say(choice(no))
         else:
             await self.bot.say(choice(no))
+# ----------------------------------------------------------------------------
+    @commands.command(no_pm=False)
 
+    async def isitvalentinesday(self):
+        """Tells you if it is Valentine's Day or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi", "Time for the lovin'", "Time to break out the body pillow ;)", "Time to break out that Marvin Gaye :heart_exclamation:"]
+
+        if month == 2:
+            if day == 14:
+                await self.bot.say(choice(yes))
+            else:
+                await self.bot.say(choice(no))
+        else:
+            await self.bot.say(choice(no))
+# ----------------------------------------------------------------------------
+    @commands.command(no_pm=False)
+
+    async def isitaprilfoolsday(self):
+        """Tells you if it is April Fool's Day or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi", "No ;)"]
+
+        if month == 4:
+            if day == 1:
+                await self.bot.say(choice(yes))
+            else:
+                await self.bot.say(choice(no))
+        else:
+            await self.bot.say(choice(no))
+# ----------------------------------------------------------------------------
+@commands.command(no_pm=False)
+
+async def isitindepenenceday(self):
+    """Tells you if it is Independence Day (American) or not"""
+    time = datetime.now()
+    month = time.month
+    day = time.day
+    no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+    yes = ["Yes", "Yee", "Das right boi", "YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!", "U :gun: S :boom: A :fireworks:"]
+
+    if month == 7:
+        if day == 4
+            await self.bot.say(choose(yes))
+        else:
+            await self.bot.say(choose(no))
+    else:
+        await self.bot.say(choose(no))
+# ----------------------------------------------------------------------------
 def setup(bot):
     n = Isitchristmas(bot)
     bot.add_cog(n)

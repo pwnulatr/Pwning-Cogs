@@ -5,9 +5,9 @@ A repo for cogs that I make... whenever that may be. These are the current cogs 
 A cog/plugin that tells tells you if it is a specific holiday. Basically, this is a personal test to see if I can code it. Currently supports:
 
 - [x] Christmas
-- [ ] Halloween
-- [ ] Valentine's Day
-- [ ] April Fool's Day
-- [ ] Independence Day (America)
+- [x] Halloween
+- [x] Valentine's Day
+- [x] April Fool's Day
+- [x] Independence Day (America)
 - [ ] Thanksgiving (America)
 - [ ] Others?
