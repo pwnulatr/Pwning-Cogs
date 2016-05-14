@@ -1,6 +1,6 @@
 {
     "AUTHOR" : "Pwnulatr",
-    "DESCRIPTION" : "Usage: [p]isitchristmas",
+    "DESCRIPTION" : "Gives a yes or no response when you ask if it is a specific holiday",
     "DISABLED" : false,
-    "NAME" : "Is it Christmas?"
+    "NAME" : "Is it a holiday today?"
 }

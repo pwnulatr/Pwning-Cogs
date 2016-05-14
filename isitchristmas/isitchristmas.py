@@ -1,3 +1,6 @@
+# isitchristmas coded by Pwnulatr as a personal test to learn python and put
+# it to use :)
+# TO-DO Add more yes responses to the Thanksgiving section. Weekday is 3. Possible fall dates are 22-28
 import discord
 from discord.ext import commands
 from random import choice
@@ -79,23 +82,46 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
-@commands.command(no_pm=False)
+    @commands.command(no_pm=False)
 
-async def isitindepenenceday(self):
-    """Tells you if it is Independence Day (American) or not"""
-    time = datetime.now()
-    month = time.month
-    day = time.day
-    no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
-    yes = ["Yes", "Yee", "Das right boi", "YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!", "U :gun: S :boom: A :fireworks:"]
+    async def isitindependenceday(self):
+        """Tells you if it is Independence Day (American) or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi", "YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!", "U :gun: S :boom: A :fireworks:"]
 
-    if month == 7:
-        if day == 4:
-            await self.bot.say(choose(yes))
+        if month == 7:
+            if day == 4:
+                await self.bot.say(choice(yes))
+            else:
+                await self.bot.say(choice(no))
         else:
-            await self.bot.say(choose(no))
-    else:
-        await self.bot.say(choose(no))
+            await self.bot.say(choice(no))
+# ----------------------------------------------------------------------------
+    @commands.command(no_pm=False)
+
+    async def isitthanksgiving(self):
+        """Tells you if it Thanksgiving Day (American) or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        weekday = time.weekday
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", ""]
+        thisisrepetitiveplezstahp = ["22", "23", "24", "25", "26", "27", "28"]
+
+        if month == 11:
+            if weekday == 3:
+                if day in thisisrepetitiveplezstahp:
+                    await self.bot.say(choice(yes))
+                else:
+                    await self.bot.say(choice(no))
+            else:
+                await self.bot.say(choice(no))
+        else:
+            await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
 def setup(bot):
     n = Isitchristmas(bot)
