@@ -1,18 +1,27 @@
 # isitchristmas coded by Pwnulatr as a personal test to learn python and put
 # it to use :)
-# TO-DO Add more yes responses to the Thanksgiving section. Weekday is 3. Possible fall dates are 22-28
-import discord
 from discord.ext import commands
+from __main__ import send_cmd_help
 from random import choice
 from datetime import datetime
 
 class Isitchristmas:
+    """Determine if it is a Holiday today"""
+
     def __init__(self, bot):
         self.bot = bot
+# ----------------------------------------------------------------------------
+    @commands.group(pass_context=True)
 
-    @commands.command(no_pm=False)
+    async def isit(self, ctx):
+        """These are the different holidays you can query."""
 
-    async def isitchristmas(self):
+        if ctx.invoked_subcommand is None:
+            await send_cmd_help(ctx)
+# ----------------------------------------------------------------------------
+    @isit.command(name= "christmas", pass_context=False)
+
+    async def _christmas_isit(self):
         """Tells you if it is Christmas or not"""
         time = datetime.now()
         month = time.month
@@ -28,9 +37,9 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
-    @commands.command(no_pm=False)
+    @isit.command(name="halloween", pass_context=False)
 
-    async def isithalloween(self):
+    async def _halloween_isit(self):
         """Tells you if it is Halloween or not"""
         time = datetime.now()
         month = time.month
@@ -46,9 +55,9 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
-    @commands.command(no_pm=False)
+    @isit.command(name="valentinesday", pass_context=False)
 
-    async def isitvalentinesday(self):
+    async def _valentinesday_isit(self):
         """Tells you if it is Valentine's Day or not"""
         time = datetime.now()
         month = time.month
@@ -64,9 +73,9 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
-    @commands.command(no_pm=False)
+    @isit.command(name="aprilfoolsday", pass_context=False)
 
-    async def isitaprilfoolsday(self):
+    async def _aprilfoolsday_isit(self):
         """Tells you if it is April Fool's Day or not"""
         time = datetime.now()
         month = time.month
@@ -82,9 +91,9 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
-    @commands.command(no_pm=False)
+    @isit.command(name="independenceday", pass_context=False)
 
-    async def isitindependenceday(self):
+    async def _independenceday_isit(self):
         """Tells you if it is Independence Day (American) or not"""
         time = datetime.now()
         month = time.month
@@ -100,16 +109,16 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
-    @commands.command(no_pm=False)
+    @isit.command(name="thanksgiving", pass_context=False)
 
-    async def isitthanksgiving(self):
+    async def _thanksgiving_isit(self):
         """Tells you if it Thanksgiving Day (American) or not"""
         time = datetime.now()
         month = time.month
         day = time.day
         weekday = time.weekday
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
-        yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", ""]
+        yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", "Y :turkey: E :turkey: S"]
         thisisrepetitiveplezstahp = ["22", "23", "24", "25", "26", "27", "28"]
 
         if month == 11:

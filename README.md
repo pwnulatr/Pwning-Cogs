@@ -14,4 +14,5 @@ A cog that tells tells you if it is a specific holiday. Basically, this is a per
 - [ ] Others?
 
 ##### Future goals for this cog:
-- [ ] Change to group command `isit` with the sub command of the holiday (ex.`[p]isit Christmas`)
+- [x] Change to group command `isit` with the sub command of the holiday (ex.`[p]isit Christmas`)
+- [ ] Others?
