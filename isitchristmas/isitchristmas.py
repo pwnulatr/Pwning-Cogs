@@ -29,11 +29,8 @@ class Isitchristmas:
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "Holla :christmas_tree: playa :christmas_tree: it :christmas_tree: is :christmas_tree: finally :christmas_tree: Christmas :christmas_tree:", "BUST OUT THAT FIGGY PUDDIN' Y'ALL! IT'S CHRISTMAS!", "Awwww yeeeee C :snowman: H :snowman: R :snowman: I :snowman: S :snowman: T :snowman: M :snowman: A :snowman: S"]
 
-        if month == 12:
-            if day == 25:
-                await self.bot.say(choice(yes))
-            else:
-                await self.bot.say(choice(no))
+        if month == 12 and day == 25:
+            await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
@@ -47,11 +44,8 @@ class Isitchristmas:
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "Spoopy time guise :jack_o_lantern: :ghost: :candy: :skull_crossbones: :spider_web :skull:", "HAPPY HALL:jack_o_lantern:WEEN", "BUST OUT THE PUMPKIN PIE Y'ALL, IT'S SPOOPY HALLOWEEN TIME!"]
 
-        if month == 10:
-            if day == 31:
-                await self.bot.say(choice(yes))
-            else:
-                await self.bot.say(choice(no))
+        if month == 10 and day == 31:
+            await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
@@ -65,11 +59,8 @@ class Isitchristmas:
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "Time for the lovin'", "Time to break out the body pillow ;)", "Time to break out that Marvin Gaye :heart_exclamation:"]
 
-        if month == 2:
-            if day == 14:
-                await self.bot.say(choice(yes))
-            else:
-                await self.bot.say(choice(no))
+        if month == 2 and day == 14:
+            await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
@@ -83,11 +74,8 @@ class Isitchristmas:
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "No ;)"]
 
-        if month == 4:
-            if day == 1:
-                await self.bot.say(choice(yes))
-            else:
-                await self.bot.say(choice(no))
+        if month == 4 and day == 1:
+            await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
@@ -101,11 +89,8 @@ class Isitchristmas:
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!", "U :gun: S :boom: A :fireworks:"]
 
-        if month == 7:
-            if day == 4:
-                await self.bot.say(choice(yes))
-            else:
-                await self.bot.say(choice(no))
+        if month == 7 and day == 4:
+            await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------
@@ -121,14 +106,8 @@ class Isitchristmas:
         yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", "Y :turkey: E :turkey: S"]
         thisisrepetitiveplezstahp = ["22", "23", "24", "25", "26", "27", "28"]
 
-        if month == 11:
-            if weekday == 3:
-                if day in thisisrepetitiveplezstahp:
-                    await self.bot.say(choice(yes))
-                else:
-                    await self.bot.say(choice(no))
-            else:
-                await self.bot.say(choice(no))
+        if month == 11 and weekday == 3 and day in thisisrepetitiveplezstahp:
+            await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
 # ----------------------------------------------------------------------------

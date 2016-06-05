@@ -1,0 +1,6 @@
+{
+    "AUTHOR" : "Pwnulatr",
+    "DESCRIPTION" : "A cog used to get the thumbnail from a YouTube video (Currently only works with full links, not youtu.be links)",
+    "DISABLED" : false,
+    "NAME" : "YouTube Thumnail Extractor"
+}
