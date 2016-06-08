@@ -1,6 +1,7 @@
 {
     "AUTHOR" : "Pwnulatr",
-    "DESCRIPTION" : "Gives a yes or no response when you ask if it is a specific holiday",
-    "DISABLED" : false,
-    "NAME" : "Is it a holiday today?"
+    "INSTALL_MSG" : "Successfully installed the isit cog./nUse [p]isit to get a list of holidays you can query",
+    "NAME" : "Isitchristmas",
+    "SHORT" : "Gives a yes/no response for a holiday if it is or isn't that holiday",
+    "DESCRIPTION" : "Gives a yes/no response for a holiday if it is or isn't that holiday./nWill hopefully support adding holidays and possibly holiday notifications in the future."
 }
