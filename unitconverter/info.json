@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "Pwnulatr",
+    "INSTALL_MSG" : "Successfully installed the cog./nuse `[p]help` to see the commands for conversion",
+    "NAME" : "Converter",
+    "SHORT" : "Converts units of stuff. Currently supports Temperature and Speed. DOES NOT SUPPORT DECIMALS YET.",
+    "DESCRIPTION" : "Converts different units of measurement. Currently does not support decimal points. /nTemperature /nSpeed /nLength (Partially)"
+}
