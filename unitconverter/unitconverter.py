@@ -1,7 +1,8 @@
-# Sauces: http://www.rapidtables.com/ AND https://www.checkyourmath.com/index.php
+# Sauce: rapidtables.com AND checkyourmath.com
+# Coded by Pwnulatr with a ton of math help from Exbrandong
 from discord.ext import commands
 from __main__ import send_cmd_help
-import math
+from random import choice
 
 class Converter:
     """Unit conversion tool"""
@@ -33,6 +34,13 @@ class Converter:
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 #------------------------------------------------------------------------------
+    @commands.group(pass_context=True)
+    async def currency(self, ctx):
+        """Units of currency you can convert"""
+
+        if ctx.invoked_subcommand is None:
+            await send_cmd_help(ctx)
+#------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||TEMPERATURE|||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
 # And thus we begin the Copy-Paste abuse
@@ -42,6 +50,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = ( newinteger - 32 ) / 1.8
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°C`")
 #------------------------------------------------------------------------------
     @temp.command(name= "c2f", pass_context=False)
@@ -50,6 +59,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 1.8 + 32
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°F`")
 #------------------------------------------------------------------------------
     @temp.command(name= "f2k", pass_context=False)
@@ -58,6 +68,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = ( newinteger + 459.67 ) * 5 / 9
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°K`")
 #------------------------------------------------------------------------------
     @temp.command(name= "c2k", pass_context=False)
@@ -66,6 +77,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger + 273.15
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°K`")
 #------------------------------------------------------------------------------
     @temp.command(name= "r2k", pass_context=False)
@@ -74,6 +86,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 5 / 9
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°K`")
 #------------------------------------------------------------------------------
     @temp.command(name= "c2r", pass_context=False)
@@ -82,6 +95,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = ( newinteger + 273.15) * 9 / 5
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°R`")
 #------------------------------------------------------------------------------
     @temp.command(name= "f2r", pass_context=False)
@@ -90,6 +104,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger + 459.67
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°R`")
 #------------------------------------------------------------------------------
     @temp.command(name= "k2f", pass_context=False)
@@ -98,6 +113,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 9 / 5 - 459.67
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°F`")
 #------------------------------------------------------------------------------
     @temp.command(name= "k2c", pass_context=False)
@@ -106,6 +122,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger - 273.15
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°C`")
 #------------------------------------------------------------------------------
     @temp.command(name= "k2r", pass_context=False)
@@ -114,6 +131,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 9 / 5
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°R`")
 #------------------------------------------------------------------------------
     @temp.command(name= "r2f", pass_context=False)
@@ -122,6 +140,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger - 459.67
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°F`")
 #------------------------------------------------------------------------------
     @temp.command(name= "r2c", pass_context=False)
@@ -130,6 +149,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = ( newinteger - 491.67 ) * 5 / 9
+
         await self.bot.say("Your converted temperature is `" + str(convertedinteger) + "°C`")
 #------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||||||SPEED|||||||||||||||||||||||||||||||||||||
@@ -140,6 +160,7 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 1.609344
+
         await self.bot.say("Your converted speed is `" + str(convertedinteger) + " KMH`")
 #------------------------------------------------------------------------------
     @speed.command(name= "kmh2mph", pass_context=False)
@@ -148,7 +169,44 @@ class Converter:
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger / 1.609344
+
         await self.bot.say("Your converted speed is `" + str(convertedinteger) + " MPH`")
+#------------------------------------------------------------------------------
+    @speed.command(name= "mps2kmh", pass_context=False)
+    async def _mps2kmh_speed(self, userinput):
+        """Meters Per Second to Kilometers Per Hour"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 3.6
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " KMH`")
+#------------------------------------------------------------------------------
+    @speed.command(name= "kmh2mps", pass_context=False)
+    async def _kmh2mps_speed(self, userinput):
+        """Kilometers Per Hour to Meters Per Second"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 3.6
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " M/S`")
+#------------------------------------------------------------------------------
+    @speed.command(name= "fps2mph", pass_context=False)
+    async def _fps2mph_speed(self, userinput):
+        """Feet Per Second to Miles Per Hour"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1.46666666666667
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " MPH`")
+#------------------------------------------------------------------------------
+    @speed.command(name= "mph2fps", pass_context=False)
+    async def _mph2fps_speed(self, userinput):
+        """Miles Per Hour to Feet Per Second"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1.46666666666667
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " FPS`")
 #------------------------------------------------------------------------------
 #|||||||||||||||||||||||||||||||||||LENGTH|||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
@@ -190,8 +248,67 @@ class Converter:
 
         await self.bot.say("Your converted length is `" + str(convertedinteger) + " centimeters`")
 #------------------------------------------------------------------------------
-#||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    @length.command(name= "cm2mm", pass_context=False)
+    async def _cm2mm_length(self, userinput):
+        """Centimeters to Millimeters"""
+
+        responses = ["I am so sad that the education system has failed you.", "Just move the decimal point to the right by one integer.", "Are you serious?"]
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 10
+
+        await self.bot.say(responses + " But hey, because you asked... Your converted length is `" + str(convertedinteger) + " Millimeters`")
 #------------------------------------------------------------------------------
+    @length.command(name= "f2mm", pass_context=False)
+    async def _f2mm_length(self, userinput):
+        """Feet to Millimeters"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 304.8
+
+        await self.bot.say("Your converted length is `" + str(convertedinteger) + " Millimeters`")
+#------------------------------------------------------------------------------
+    @length.command(name= "f2in", pass_context=False)
+    async def _f2in_length(self, userinput):
+        """Feet to Inches"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 12
+
+        await self.bot.say("Your converted length is `" + str(convertedinteger) + " Inches`")
+#------------------------------------------------------------------------------
+    @length.command(name= "f2m", pass_context=False)
+    async def _f2m_length(self, userinput):
+        """Feet to Meters"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 0.3048
+
+        await self.bot.say("Your converted length is `" + str(convertedinteger) + " Meters`")
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#||||||||||||||||||||||||||||||||||CURRENCY||||||||||||||||||||||||||||||||||||
+#------------------------------------------------------------------------------
+    @currency.command(name= "msp2dollar", pass_context=False)
+    async def _msp2dollar_currency(self, userinput):
+        """Microsoft Points to US/CA Dollars"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 80
+
+        await self.bot.say("Your converted currency is `$" + str(round(convertedinteger, 2)) + "`")
+#------------------------------------------------------------------------------
+    @currency.command(name= "dollar2msp", pass_context=False)
+    async def _dollar2msp_currency(self, userinput):
+        """US/CA Dollars to Microsoft Points"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 80
+
+        await self.bot.say("Your converted currency is `" + str(int(convertedinteger)) + " Points`")
+#------------------------------------------------------------------------------
+#|||||||||||||||||||||||||||||||||||DEFINE|||||||||||||||||||||||||||||||||||||
+#------------------------------------------------------------------------------
+# This tells the bot to add these commands to the help context
 def setup(bot):
     n = Converter(bot)
     bot.add_cog(n)
