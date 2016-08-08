@@ -4,7 +4,7 @@ from discord.ext import commands
 from __main__ import send_cmd_help
 from random import choice
 
-class Converter:
+class UnitConverter:
     """Unit conversion tool"""
 
     def __init__(self, bot):
@@ -37,6 +37,13 @@ class Converter:
     @commands.group(pass_context=True)
     async def currency(self, ctx):
         """Units of currency you can convert"""
+
+        if ctx.invoked_subcommand is None:
+            await send_cmd_help(ctx)
+#------------------------------------------------------------------------------
+    @commands.group(pass_context=True)
+    async def data(self, ctx):
+        """Units of data you can convert"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
@@ -306,9 +313,20 @@ class Converter:
 
         await self.bot.say("Your converted currency is `" + str(int(convertedinteger)) + " Points`")
 #------------------------------------------------------------------------------
+#||||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
+#------------------------------------------------------------------------------
+    @data.command(name= "bits2bytes", pass_context=False)
+    async def _bits2bytes_data(self, userinput):
+        """Bits to Bytes (will work with any data prefix if converting to same)"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 8
+
+        await self.bot.say("Your converted data ammount is `" + str(convertedinteger) + " bytes`")
+#------------------------------------------------------------------------------
 #|||||||||||||||||||||||||||||||||||DEFINE|||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
 # This tells the bot to add these commands to the help context
 def setup(bot):
-    n = Converter(bot)
+    n = UnitConverter(bot)
     bot.add_cog(n)
