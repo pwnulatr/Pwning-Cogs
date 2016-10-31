@@ -42,7 +42,7 @@ class Isitchristmas:
         month = time.month
         day = time.day
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
-        yes = ["Yes", "Yee", "Das right boi", "Spoopy time guise :jack_o_lantern: :ghost: :candy: :skull_crossbones: :spider_web :skull:", "HAPPY HALL:jack_o_lantern:WEEN", "BUST OUT THE PUMPKIN PIE Y'ALL, IT'S SPOOPY HALLOWEEN TIME!"]
+        yes = ["Yes", "Yee", "Das right boi", "Spoopy time guise :jack_o_lantern: :ghost: :candy: :skull_crossbones: :spider_web: :skull:", "HAPPY HALL:jack_o_lantern:WEEN", "BUST OUT THE PUMPKIN PIE Y'ALL, IT'S SPOOPY HALLOWEEN TIME!"]
 
         if month == 10 and day == 31:
             await self.bot.say(choice(yes))
