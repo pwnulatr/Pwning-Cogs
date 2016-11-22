@@ -3,7 +3,7 @@ A repo for cogs that I make... whenever that may be. These are the current cogs 
 
 If you would like to add my repo, use this command in Discord:
 
-`[p]cog repo add Pwning-Cogs https://github.com/pwnulatr/Pwning-Cogs`
+`[p]cog repo add pwning-cogs https://github.com/pwnulatr/Pwning-Cogs`
 ## [Is It Christmas?](https://github.com/pwnulatr/Pwning-Cogs/tree/master/isitchristmas)
 A cog that tells tells you if it is a specific holiday when you ask.
 
