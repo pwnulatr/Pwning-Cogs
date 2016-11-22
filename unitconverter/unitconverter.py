@@ -350,7 +350,7 @@ class UnitConverter:
         newinteger = int(str(userinput))
         convertedinteger = newinteger / 8
 
-        await self.bot.say("Your converted data ammount is `" + str(convertedinteger) + " bytes`")
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " bytes`")
 #------------------------------------------------------------------------------
     @data.command(name= "bytes2bits", pass_context=False)
     async def _bytes2bits_data(self, userinput):
@@ -359,7 +359,7 @@ class UnitConverter:
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 8
 
-        await self.bot.say("Your converted data ammount is `" + str(convertedinteger) + " bits`")
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " bits`")
 #------------------------------------------------------------------------------
     @data.command(name= "b2kb", pass_context=False)
     async def _b2kb_data(self, userinput):
