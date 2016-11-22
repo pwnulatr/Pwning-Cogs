@@ -1,7 +1,7 @@
 {
     "AUTHOR" : "Pwnulatr",
-    "INSTALL_MSG" : "Successfully installed the isit cog./nUse [p]isit to get a list of holidays you can query",
+    "INSTALL_MSG" : "Successfully installed the isit cog.\nUse [p]isit to get a list of holidays you can query",
     "NAME" : "Isitchristmas",
     "SHORT" : "Gives a yes/no response for a holiday if it is or isn't that holiday",
-    "DESCRIPTION" : "Gives a yes/no response for a holiday if it is or isn't that holiday./nWill hopefully support adding holidays and possibly holiday notifications in the future."
+    "DESCRIPTION" : "Gives a yes/no response for a holiday if it is or isn't that holiday.\nWill hopefully support adding holidays and possibly holiday notifications in the future."
 }

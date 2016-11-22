@@ -3,30 +3,25 @@
 from discord.ext import commands
 import urllib.request
 import os
-from .utils.dataIO import fileIO
+import asyncio
 
 class YoutubeThumbnail:
     """Gives you a HQ thumbnail from a YouTube link you provide"""
-
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(no_pm=True)
-
-    async def thumbnail(self, videourl):
+    @commands.command(no_pm=True, pass_context=False)
+    async def thumbnail(self, ctx):
         """Supply a Youtube link to get the Thumbnail"""
 
-        if len(videourl) > 0: #If there is no link supplied
+        url = ctx
+        image = url.rsplit('=',1)[1]
+        thumbnaillink = "https://img.youtube.com/vi/" + image + "/maxresdefault.jpg"
 
-            url = str(videourl)
-            image = url.rsplit('=',1)[1]
-            thumbnaillink = "https://img.youtube.com/vi/" + image + "/maxresdefault.jpg"
-
-            urllib.request.urlretrieve(thumbnaillink, "data/youtubethumbnail/cache/" + image + ".jpg")
-
-            await self.bot.say(thumbnaillink)
-        else:
-            await self.bot.say("Please supply a YouTube link")
+        urllib.request.urlretrieve(thumbnaillink, "data/youtubethumbnail/cache/" + image + ".jpg")
+        #await asyncio.sleep(1)
+        #await self.bot.send_file(ctx.message.channel, "data/youtubethumbnail/cache/" + image + ".jpg")
+        await self.bot.say(thumbnaillink)
 
 def check_folders():
     folders = ("data", "data/youtubethumbnail/cache/")
@@ -34,7 +29,6 @@ def check_folders():
         if not os.path.exists(folder):
             print("Creating " + folder + " folder...")
             os.makedirs(folder)
-
 
 def setup(bot):
     check_folders()

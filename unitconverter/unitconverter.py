@@ -43,7 +43,7 @@ class UnitConverter:
 #------------------------------------------------------------------------------
     @commands.group(pass_context=True)
     async def data(self, ctx):
-        """Units of data you can convert"""
+        """Units of data you can convert (In binary form, ex. 1024 not 1000)"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
@@ -215,6 +215,34 @@ class UnitConverter:
 
         await self.bot.say("Your converted speed is `" + str(convertedinteger) + " FPS`")
 #------------------------------------------------------------------------------
+    @speed.command(name= "knots2mph", pass_context=False)
+    async def _knots2mph_speed(self, userinput):
+        """Knots to Miles Per Hour"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1.15078
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " MPH`")
+#------------------------------------------------------------------------------
+    @speed.command(name= "mph2knots", pass_context=False)
+    async def _mph2knots_speed(self, userinput):
+        """Miles Per Hour to Knots"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1.15078
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " Knots`")
+#------------------------------------------------------------------------------
+    @speed.command(name= "kmh2knots", pass_context=False)
+    async def _kmh2knots_speed(self, userinput):
+        """Kilometers Per Hour to Knots"""
+
+        newinteger = int(str(userinput))
+        anothaconversion = newinteger / 1.609344
+        convertedinteger = anothaconversion / 1.15078
+
+        await self.bot.say("Your converted speed is `" + str(convertedinteger) + " Knots`")
+#------------------------------------------------------------------------------
 #|||||||||||||||||||||||||||||||||||LENGTH|||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
     @length.command(name= "cm2f", pass_context=False)
@@ -317,12 +345,201 @@ class UnitConverter:
 #------------------------------------------------------------------------------
     @data.command(name= "bits2bytes", pass_context=False)
     async def _bits2bytes_data(self, userinput):
-        """Bits to Bytes (will work with any data prefix if converting to same)"""
+        """Bits to Bytes (will work with any data prefix if converting to same prefix)"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 8
+
+        await self.bot.say("Your converted data ammount is `" + str(convertedinteger) + " bytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "bytes2bits", pass_context=False)
+    async def _bytes2bits_data(self, userinput):
+        """Bytes to Bits (will work with any data prefix if converting to same prefix)"""
 
         newinteger = int(str(userinput))
         convertedinteger = newinteger * 8
 
-        await self.bot.say("Your converted data ammount is `" + str(convertedinteger) + " bytes`")
+        await self.bot.say("Your converted data ammount is `" + str(convertedinteger) + " bits`")
+#------------------------------------------------------------------------------
+    @data.command(name= "b2kb", pass_context=False)
+    async def _b2kb_data(self, userinput):
+        """Bits/Bytes to Kilobits/Kilobytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Kilobits/Kilobytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "b2mb", pass_context=False)
+    async def _b2mb_data(self, userinput):
+        """Bits/Bytes to Megabits/Megabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Megabits/Megabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "b2gb", pass_context=False)
+    async def _b2gb_data(self, userinput):
+        """Bits/Bytes to Gigabits/Gigabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1073741824
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Gigabits/Gigabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "b2tb", pass_context=False)
+    async def _b2tb_data(self, userinput):
+        """Bits/Bytes to Terabits/Terabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1099511627776
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Terabits/Terabytes`")
+#||||||||||||||||||||||||||||||||||KILOBITS||||||||||||||||||||||||||||||||||||
+    @data.command(name= "kb2b", pass_context=False)
+    async def _kb2b_data(self, userinput):
+        """Kilobits/Kilobytes to Bits/Bytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Bits/Bytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "kb2mb", pass_context=False)
+    async def _kb2mb_data(self, userinput):
+        """Kilobits/Kilobytes to Megabits/Megabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Megabits/Megabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "kb2gb", pass_context=False)
+    async def _kb2gb_data(self, userinput):
+        """Kilobits/Kilobytes to Gigabits/Gigabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Gigabits/Gigabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "kb2tb", pass_context=False)
+    async def _kb2tb_data(self, userinput):
+        """Kilobits/Kilobytes to Gigabits/Gigabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1073741824
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Terabits/Terabytes`")
+#||||||||||||||||||||||||||||||||||MEGABITS||||||||||||||||||||||||||||||||||||
+    @data.command(name= "mb2b", pass_context=False)
+    async def _mb2b_data(self, userinput):
+        """Megabits/Megabytes to Bits/Bytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Bits/Bytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "mb2kb", pass_context=False)
+    async def _mb2kb_data(self, userinput):
+        """Megabits/Megabytes to Kilobits/Kilobytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Kilobits/Kilobytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "mb2gb", pass_context=False)
+    async def _mb2gb_data(self, userinput):
+        """Megabits/Megabytes to Gigabits/Gigabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Gigabits/Gigabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "mb2tb", pass_context=False)
+    async def _mb2tb_data(self, userinput):
+        """Megabits/Megabytes to Terabits/Terabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Terabits/Terabytes`")
+#||||||||||||||||||||||||||||||||||GIGABITS||||||||||||||||||||||||||||||||||||
+    @data.command(name= "gb2b", pass_context=False)
+    async def _gb2b_data(self, userinput):
+        """Gigabits/Gigabytes to Bits/Bytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1073741824
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Bits/Bytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "gb2kb", pass_context=False)
+    async def _gb2kb_data(self, userinput):
+        """Gigabits/Gigabytes to Kilobits/Kilobytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Kilobits/Kilobytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "gb2mb", pass_context=False)
+    async def _gb2mb_data(self, userinput):
+        """Gigabits/Gigabytes to Kilobits/Kilobytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Megabits/Megabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "gb2tb", pass_context=False)
+    async def _gb2tb_data(self, userinput):
+        """Gigabits/Gigabytes to Terabits/Terabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger / 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Terabits/Terabytes`")
+#||||||||||||||||||||||||||||||||||TERABITS||||||||||||||||||||||||||||||||||||
+    @data.command(name= "tb2b", pass_context=False)
+    async def _tb2b_data(self, userinput):
+        """Terabits/Terabytes to Bits/Bytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1099511627776
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Bits/Bytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "tb2kb", pass_context=False)
+    async def _tb2kb_data(self, userinput):
+        """Terabits/Terabytes to Kilobits/Kilobytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1073741824
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Kilobits/Kilobytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "tb2mb", pass_context=False)
+    async def _tb2mb_data(self, userinput):
+        """Terabits/Terabytes to Megabits/Megabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1048576
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Megabits/Megabytes`")
+#------------------------------------------------------------------------------
+    @data.command(name= "tb2gb", pass_context=False)
+    async def _tb2gb_data(self, userinput):
+        """Terabits/Terabytes to Gigabits/Gigabytes, respectively"""
+
+        newinteger = int(str(userinput))
+        convertedinteger = newinteger * 1024
+
+        await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Gigabits/Gigabytes`")
 #------------------------------------------------------------------------------
 #|||||||||||||||||||||||||||||||||||DEFINE|||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
