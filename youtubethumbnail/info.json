@@ -1,7 +1,7 @@
 {
     "AUTHOR" : "Pwnulatr",
-    "INSTALL_MSG" : "Successfully installed YouTube Thumbnail extractor.\nUse [p]thumbnail <videourl> to get the thumbnail",
+    "INSTALL_MSG" : "Successfully installed YouTube Thumbnail Retriever.\nUse [p]thumbnail <videourl> to get the thumbnail",
     "NAME" : "YoutubeThumbnail",
     "SHORT" : "Gives you a YouTube thumbnail for a supplied link",
-    "DESCRIPTION" : "Gives you a YouTube thumbnail for a supplied link and caches it on the hosts computer for later use.\nWill support youtu.be links in the future and more options"
+    "DESCRIPTION" : "Gives you a YouTube thumbnail from a supplied link and caches it on the host's computer for later use.\nWill support youtu.be links in the future and more options"
 }
