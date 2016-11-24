@@ -104,7 +104,7 @@ class Isitchristmas:
         weekday = time.weekday
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", "Y :turkey: E :turkey: S"]
-        thisisrepetitiveplezstahp = ["22", "23", "24", "25", "26", "27", "28"]
+        thisisrepetitiveplezstahp = list(range(22, 29))
 
         if month == 11 and weekday == 3 and day in thisisrepetitiveplezstahp:
             await self.bot.say(choice(yes))
