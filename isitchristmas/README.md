@@ -8,7 +8,7 @@ Syntax: `[p]isit <holiday>` A response will be given in the same channel.
 - Valentine's Day
 - April Fool's Day
 - Independence Day (America)
-- Thanksgiving (America)
+- Thanksgiving (America and Canada)
 #### Possible future goals for this cog:
 - Use a config file of some kind to allow users to add their own holidays.
 - Notify users of a holiday in a specified chat at a specific time.

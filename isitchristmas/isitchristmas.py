@@ -104,9 +104,26 @@ class Isitchristmas:
         weekday = time.weekday()
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", "Y :turkey: E :turkey: S"]
-        thisisrepetitiveplezstahp = list(range(22, 29))
+        daterange = list(range(22, 29))
 
-        if month == 11 and weekday == 3 and day in thisisrepetitiveplezstahp:
+        if month == 11 and weekday == 3 and day in daterange:
+            await self.bot.say(choice(yes))
+        else:
+            await self.bot.say(choice(no))
+# ----------------------------------------------------------------------------
+    @isit.command(name="thanksgivingincanada", pass_context=False)
+
+    async def _thanksgivingincanada_isit(self):
+        """Tells you if it Thanksgiving Day (Canada) or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        weekday = time.weekday()
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi"]
+        daterange = list(range(8, 15))
+
+        if month == 11 and weekday == 0 and day in daterange:
             await self.bot.say(choice(yes))
         else:
             await self.bot.say(choice(no))
