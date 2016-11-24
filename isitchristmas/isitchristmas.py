@@ -101,7 +101,7 @@ class Isitchristmas:
         time = datetime.now()
         month = time.month
         day = time.day
-        weekday = time.weekday
+        weekday = time.weekday()
         no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
         yes = ["Yes", "Yee", "Das right boi", "Happy Turkey Day!", "Y :turkey: E :turkey: S"]
         thisisrepetitiveplezstahp = list(range(22, 29))
