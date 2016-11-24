@@ -492,7 +492,7 @@ class UnitConverter:
         """Gigabits/Gigabytes to Kilobits/Kilobytes, respectively"""
 
         newinteger = int(str(userinput))
-        convertedinteger = newinteger * 1048576
+        convertedinteger = newinteger * 1024
 
         await self.bot.say("Your converted data amount is `" + str(convertedinteger) + " Megabits/Megabytes`")
 #------------------------------------------------------------------------------
