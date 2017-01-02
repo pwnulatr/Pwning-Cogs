@@ -332,7 +332,7 @@ class UnitConverter:
         """Microsoft Points to US/CA Dollars"""
 
         mathstuff = userinput / 80
-        convertedinteger = round(convertedinteger, 2)
+        convertedinteger = round(mathstuff, 2)
 
         await self.bot.say("Your converted currency is `${}`".format(convertedinteger))
 #------------------------------------------------------------------------------
@@ -343,7 +343,26 @@ class UnitConverter:
 
         convertedinteger = userinput * 80
 
-        await self.bot.say("Your converted currency is `" + str(int(convertedinteger)) + " Points`")
+        await self.bot.say("Your converted currency is `{} Points`".format(convertedinteger))
+#------------------------------------------------------------------------------
+
+    @currency.command(name="platinum2dollar", pass_context=False)
+    async def _platinum2dollar_currency(self, userinput: int):
+        """Platinum (WarFrame currency) to US/CA Dollars"""
+
+        mathstuff = userinput / 15
+        convertedinteger = round(mathstuff, 2)
+
+        await self.bot.say("Your converted currency is `${}`".format(convertedinteger))
+#------------------------------------------------------------------------------
+
+    @currency.command(name="dollar2platinum", pass_context=False)
+    async def _dollar2platinum_currency(self, userinput: int):
+        """US/CA Dollars to Platinum (WarFrame currency)"""
+
+        convertedinteger = userinput * 15
+
+        await self.bot.say("Your converted currency is '{} Platinum'".format(convertedinteger))
 #------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
