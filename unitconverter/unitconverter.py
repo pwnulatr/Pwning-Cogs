@@ -346,9 +346,9 @@ class UnitConverter:
         await self.bot.say("Your converted currency is `{} Points`".format(convertedinteger))
 #------------------------------------------------------------------------------
 
-    @currency.command(name="platinum2dollar", pass_context=False)
-    async def _platinum2dollar_currency(self, userinput: int):
-        """Platinum (WarFrame currency) to US/CA Dollars"""
+    @currency.command(name="platinum2usd", pass_context=False)
+    async def _platinum2usd_currency(self, userinput: int):
+        """Platinum (WarFrame currency) to US Dollars"""
 
         mathstuff = userinput / 15
         convertedinteger = round(mathstuff, 2)
@@ -356,11 +356,31 @@ class UnitConverter:
         await self.bot.say("Your converted currency is `${}`".format(convertedinteger))
 #------------------------------------------------------------------------------
 
-    @currency.command(name="dollar2platinum", pass_context=False)
-    async def _dollar2platinum_currency(self, userinput: int):
-        """US/CA Dollars to Platinum (WarFrame currency)"""
+    @currency.command(name="usd2platinum", pass_context=False)
+    async def _usd2platinum_currency(self, userinput: int):
+        """US Dollars to Platinum (WarFrame currency)"""
 
         convertedinteger = userinput * 15
+
+        await self.bot.say("Your converted currency is '{} Platinum'".format(convertedinteger))
+#------------------------------------------------------------------------------
+
+    @currency.command(name="platinum2cad", pass_context=False)
+    async def _platinum2cad_currency(self, userinput: int):
+        """Platinum (WarFrame currency) to CA Dollars"""
+
+        mathstuff = userinput / 13.66120218579235
+        convertedinteger = round(mathstuff, 2)
+
+        await self.bot.say("Your converted currency is `${}`".format(convertedinteger))
+#------------------------------------------------------------------------------
+
+    @currency.command(name="cad2platinum", pass_context=False)
+    async def _cad2platinum_currency(self, userinput: int):
+        """CA Dollars to Platinum (WarFrame currency)"""
+
+        mathstuff = userinput * 13.66120218579235
+        convertedinteger = round(mathstuff)
 
         await self.bot.say("Your converted currency is '{} Platinum'".format(convertedinteger))
 #------------------------------------------------------------------------------
