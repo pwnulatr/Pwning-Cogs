@@ -346,7 +346,7 @@ class UnitConverter:
         await self.bot.say("Your converted currency is `{} Points`".format(convertedinteger))
 #------------------------------------------------------------------------------
 
-    @currency.command(name="platinum2usd", pass_context=False)
+    @currency.command(name="platinum2usd", aliases=["plat2usd"], pass_context=False)
     async def _platinum2usd_currency(self, userinput: int):
         """Platinum (WarFrame currency) to US Dollars"""
 
@@ -356,7 +356,7 @@ class UnitConverter:
         await self.bot.say("Your converted currency is `${}`".format(convertedinteger))
 #------------------------------------------------------------------------------
 
-    @currency.command(name="usd2platinum", pass_context=False)
+    @currency.command(name="usd2platinum", aliases=["usd2plat"], pass_context=False)
     async def _usd2platinum_currency(self, userinput: int):
         """US Dollars to Platinum (WarFrame currency)"""
 
@@ -365,7 +365,7 @@ class UnitConverter:
         await self.bot.say("Your converted currency is '{} Platinum'".format(convertedinteger))
 #------------------------------------------------------------------------------
 
-    @currency.command(name="platinum2cad", pass_context=False)
+    @currency.command(name="platinum2cad", aliases=["plat2cad"], pass_context=False)
     async def _platinum2cad_currency(self, userinput: int):
         """Platinum (WarFrame currency) to CA Dollars"""
 
@@ -375,7 +375,7 @@ class UnitConverter:
         await self.bot.say("Your converted currency is `${}`".format(convertedinteger))
 #------------------------------------------------------------------------------
 
-    @currency.command(name="cad2platinum", pass_context=False)
+    @currency.command(name="cad2platinum", aliases=["cad2plat"], pass_context=False)
     async def _cad2platinum_currency(self, userinput: int):
         """CA Dollars to Platinum (WarFrame currency)"""
 
