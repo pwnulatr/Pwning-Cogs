@@ -4,7 +4,7 @@ A repo for cogs that I make... whenever that may be. These are the current cogs 
 If you would like to add my repo, use this command in Discord:
 
 `[p]cog repo add pwning-cogs https://github.com/pwnulatr/Pwning-Cogs`
-## [Internet Tally Outage Counter](https://github/pwnulatr/Pwning-Cogs/tree/master/internetoutagecounter)
+## [Internet's Out Again, Honey!](https://github/pwnulatr/Pwning-Cogs/tree/master/internetsoutagainhoney)
 A joke cog that tallies the amount of times that your internet has gone out.
 
 ## [Is It Christmas?](https://github.com/pwnulatr/Pwning-Cogs/tree/master/isitchristmas)
