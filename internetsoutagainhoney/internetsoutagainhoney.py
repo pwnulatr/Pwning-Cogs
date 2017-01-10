@@ -16,9 +16,10 @@ class Internetsoutagain:
         """Just adds one to the tally"""
 
         tallycount = self.settings["TALLYCOUNT"]
-        self.settings["TALLYCOUNT"] + 1
+        writetotally = tallycount + 1
+        self.settings["TALLYCOUNT"] = writetotally
         dataIO.save_json(self.file_path, self.settings)
-        await self.bot.say("Anotha one. Currently at {} outages.".format(tallycount))
+        await self.bot.say("Anotha one.")
 
     @commands.command(no_pm=False)
     @checks.is_owner()
