@@ -37,7 +37,7 @@ def check_files():
     settings = {"TALLYCOUNT" : 0}
     if not dataIO.is_valid_json("data/internetcounter/tally.json"):
         print("Creating empty tally.json...")
-        dataIO.save_json("data/internetcounter/settings.json", settings)
+        dataIO.save_json("data/internetcounter/tally.json", settings)
 
 def setup(bot):
     check_folders()
