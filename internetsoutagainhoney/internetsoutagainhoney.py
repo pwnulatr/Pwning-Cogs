@@ -12,7 +12,7 @@ class Internetsoutagain:
 
     @commands.command(no_pm=False)
     @checks.is_owner()
-    async def honeytheinternetsoutagain(self):
+    async def internetwentout(self):
         """Just adds one to the tally"""
 
         tallycount = self.settings["TALLYCOUNT"]
@@ -23,7 +23,7 @@ class Internetsoutagain:
 
     @commands.command(no_pm=False)
     @checks.is_owner()
-    async def howmanyisitnow(self):
+    async def howmanytimes(self):
         """Says what the current tally is"""
 
         tallycount = self.settings["TALLYCOUNT"]
