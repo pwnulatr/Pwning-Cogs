@@ -362,7 +362,7 @@ class UnitConverter:
 
         convertedinteger = userinput * 15
 
-        await self.bot.say("Your converted currency is '{} Platinum'".format(convertedinteger))
+        await self.bot.say("Your converted currency is `{} Platinum`".format(convertedinteger))
 #------------------------------------------------------------------------------
 
     @currency.command(name="platinum2cad", aliases=["plat2cad"], pass_context=False)
@@ -382,7 +382,7 @@ class UnitConverter:
         mathstuff = userinput * 13.66120218579235
         convertedinteger = round(mathstuff)
 
-        await self.bot.say("Your converted currency is '{} Platinum'".format(convertedinteger))
+        await self.bot.say("Your converted currency is `{} Platinum`".format(convertedinteger))
 #------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
