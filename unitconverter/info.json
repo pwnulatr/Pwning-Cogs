@@ -2,6 +2,6 @@
     "AUTHOR" : "Pwnulatr",
     "INSTALL_MSG" : "Successfully installed the cog.\nuse `[p]help` to see the commands for conversion under `UnitConverter`",
     "NAME" : "UnitConverter",
-    "SHORT" : "Converts units of measurement. DOES NOT SUPPORT DECIMALS YET.",
-    "DESCRIPTION" : "Converts different units of measurement. Currently does not support decimal points. \nTemperature \nSpeed \nData \nLength (Partially)"
+    "SHORT" : "Converts units of measurement.",
+    "DESCRIPTION" : "Converts different units of measurement.\nTemperature \nSpeed \nData \nLength (Partially)"
 }
