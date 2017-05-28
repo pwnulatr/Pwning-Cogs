@@ -15,7 +15,7 @@ class UnitConverter:
 # Defining the group command and if no subcommand is sent, send the help message
 
     @commands.group(pass_context=True)
-    async def temp(self, ctx):
+    async def temperature(self, ctx):
         """Units of Temperature you can convert"""
 
         if ctx.invoked_subcommand is None:
@@ -57,8 +57,8 @@ class UnitConverter:
 #------------------------------------------------------------------------------
 # And thus we begin the Copy-Paste abuse
 
-    @temp.command(name="f2c", pass_context=False)
-    async def _f2c_temp(self, userinput: float):
+    @temperature.command(name="f2c", pass_context=False)
+    async def _f2c_temperature(self, userinput: float):
         """Fahrenheit to Celsius"""
 
         convertednumber = (userinput - 32) / 1.8
@@ -66,8 +66,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°C`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="c2f", pass_context=False)
-    async def _c2f_temp(self, userinput: float):
+    @temperature.command(name="c2f", pass_context=False)
+    async def _c2f_temperature(self, userinput: float):
         """Celsius to Fahrenheit"""
 
         convertednumber = userinput * 1.8 + 32
@@ -75,8 +75,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°F`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="f2k", pass_context=False)
-    async def _f2k_temp(self, userinput: float):
+    @temperature.command(name="f2k", pass_context=False)
+    async def _f2k_temperature(self, userinput: float):
         """Fahrenheit to Kelvin"""
 
         convertednumber = (userinput + 459.67) * 5 / 9
@@ -84,8 +84,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°K`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="c2k", pass_context=False)
-    async def _c2k_temp(self, userinput: float):
+    @temperature.command(name="c2k", pass_context=False)
+    async def _c2k_temperature(self, userinput: float):
         """Celsius to Kelvin"""
 
         convertednumber = userinput + 273.15
@@ -93,8 +93,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°K`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="r2k", pass_context=False)
-    async def _r2k_temp(self, userinput: float):
+    @temperature.command(name="r2k", pass_context=False)
+    async def _r2k_temperature(self, userinput: float):
         """Rankine to Kelvin"""
 
         convertednumber = userinput * 5 / 9
@@ -102,8 +102,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°K`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="c2r", pass_context=False)
-    async def _c2r_temp(self, userinput: float):
+    @temperature.command(name="c2r", pass_context=False)
+    async def _c2r_temperature(self, userinput: float):
         """Celsius to Rankine"""
 
         convertednumber = (userinput + 273.15) * 9 / 5
@@ -111,8 +111,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°R`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="f2r", pass_context=False)
-    async def _f2r_temp(self, userinput: float):
+    @temperature.command(name="f2r", pass_context=False)
+    async def _f2r_temperature(self, userinput: float):
         """Fahrenheit to Rankine"""
 
         convertednumber = userinput + 459.67
@@ -120,8 +120,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°R`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="k2f", pass_context=False)
-    async def _k2f_temp(self, userinput: float):
+    @temperature.command(name="k2f", pass_context=False)
+    async def _k2f_temperature(self, userinput: float):
         """Kelvin to Fahrenheit"""
 
         convertednumber = userinput * 9 / 5 - 459.67
@@ -129,8 +129,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°F`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="k2c", pass_context=False)
-    async def _k2c_temp(self, userinput: float):
+    @temperature.command(name="k2c", pass_context=False)
+    async def _k2c_temperature(self, userinput: float):
         """Kelvin to Celsius"""
 
         convertednumber = userinput - 273.15
@@ -138,8 +138,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°C`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="k2r", pass_context=False)
-    async def _k2r_temp(self, userinput: float):
+    @temperature.command(name="k2r", pass_context=False)
+    async def _k2r_temperature(self, userinput: float):
         """Kelvin to Rankine"""
 
         convertednumber = userinput * 9 / 5
@@ -147,8 +147,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°R`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="r2f", pass_context=False)
-    async def _r2f_temp(self, userinput: float):
+    @temperature.command(name="r2f", pass_context=False)
+    async def _r2f_temperature(self, userinput: float):
         """Rankine to Fahrenheit"""
 
         convertednumber = userinput - 459.67
@@ -156,8 +156,8 @@ class UnitConverter:
         await self.bot.say("Your converted temperature is `{}°F`".format(convertednumber))
 #------------------------------------------------------------------------------
 
-    @temp.command(name="r2c", pass_context=False)
-    async def _r2c_temp(self, userinput: float):
+    @temperature.command(name="r2c", pass_context=False)
+    async def _r2c_temperature(self, userinput: float):
         """Rankine to Celsius"""
 
         convertednumber = (userinput - 491.67) * 5 / 9
@@ -323,6 +323,14 @@ class UnitConverter:
         convertednumber = userinput * 0.3048
 
         await self.bot.say("Your converted length is `{} Meters`".format(convertednumber))
+#------------------------------------------------------------------------------
+
+    @length.command(name="height", pass_context=False)
+    async def _height_length(self, metric_or_customary, feet_or_meters : float, inches_or_centimeters : float):
+        """Converts from metric height to customary height or vice versa"""
+
+        if metric_or_customary == "metric":
+
 #------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||||CURRENCY||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
