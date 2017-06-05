@@ -110,7 +110,6 @@ class Datestatustimer:
 #==============================================================================
     async def check_date_looper(self, message):
         if not message.channel.is_private:
-            datename = self.settings["DATE_NAME"]
             current_game = str(message.server.me.game)
             checkeddate = self.datecheck()
             status_verify = self.status_creator()
