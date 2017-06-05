@@ -80,14 +80,10 @@ class Datestatustimer:
     async def _force_update_datestatusset(self):
         """Forces an update of the status on command"""
         datename = self.settings["DATE_NAME"]
-        daysremain = self.settings["DAYS_REMAIN"]
+        status_verify = self.status_creator()
 
-        if datename == None:
-            await self.bot.change_presence(game=discord.Game(name="{} Days Remain!".format(daysremain)))
-            await self.bot.say("Done.")
-        else:
-            await self.bot.change_presence(game=discord.Game(name="{} Days until {}!".format(daysremain, datename)))
-            await self.bot.say("Done.")
+        await self.bot.change_presence(game=discord.Game(name=status_verify))
+        await self.bot.say("Done.")
 #==============================================================================
     def datecheck(self):
         today = date.today()
@@ -104,32 +100,27 @@ class Datestatustimer:
             daysremain = abs(targetdate - today)
             return daysremain.days
 #==============================================================================
+    def status_creator(self):
+        days_remaining = self.datecheck()
+        datename = self.settings["DATE_NAME"]
+        if datename == None:
+            return "{} Days Remain!".format(days_remaining)
+        else:
+            return "{} Days until {}!".format(days_remaining, datename)
+#==============================================================================
     async def check_date_looper(self, message):
         if not message.channel.is_private:
-            monthnumber = self.settings["MONTH_NUMBER"]
-            daysnumber = self.settings["DAY_NUMBER"]
-            days_remaining_json = self.settings["DAYS_REMAIN"]
             datename = self.settings["DATE_NAME"]
-            statusstring = self.settings["STATUS_STRING"]
             current_game = str(message.server.me.game)
             checkeddate = self.datecheck()
+            status_verify = self.status_creator()
 
             if self.last_change == None:
                 self.last_change = int(time.perf_counter())
 
-            if checkeddate != days_remaining_json or current_game == None or current_game != statusstring:
-                if abs(self.last_change - int(time.perf_counter())) >= 1800: #Every half hour.
-                    self.last_change = int(time.perf_counter())
-                    if datename == None:
-                        await self.bot.change_presence(game=discord.Game(name="{} Days Remain!".format(days_remaining_json)))
-                        self.settings["DAYS_REMAIN"] = checkeddate
-                        self.settings["STATUS_STRING"] = current_game
-                        dataIO.save_json(self.file_path, self.settings)
-                    else:
-                        await self.bot.change_presence(game=discord.Game(name="{} Days until {}!".format(days_remaining_json, datename)))
-                        self.settings["DAYS_REMAIN"] = checkeddate
-                        self.settings ["STATUS_STRING"] = current_game
-                        dataIO.save_json(self.file_path, self.settings)
+            if abs(self.last_change - int(time.perf_counter())) >= 1800: #Every half hour.
+                self.last_change = int(time.perf_counter())
+                await self.bot.change_presence(game=discord.Game(name=status_verify))
 #==============================================================================
 def check_folders():
     if not os.path.exists("data/pwning-cogs/datestatustimer"):
@@ -137,7 +128,7 @@ def check_folders():
         os.makedirs("data/pwning-cogs/datestatustimer")
 
 def check_files():
-    settings = {"DATE_NAME" : "New Year's", "MONTH_NUMBER" : 1, "DAY_NUMBER" : 1, "DAYS_REMAIN" : 0, "STATUS_STRING" : "Null"}
+    settings = {"DATE_NAME" : "New Year's", "MONTH_NUMBER" : 1, "DAY_NUMBER" : 1}
 
     if not dataIO.is_valid_json("data/pwning-cogs/datestatustimer/settings.json"):
         print("Creating example settings.json for datestatustimer...")
