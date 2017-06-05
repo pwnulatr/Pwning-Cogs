@@ -9,3 +9,5 @@ Uses the bot's playing status as a countdown to an event.
 
 ### Notes:
 The changing of the date is activated by public chat messages, so if there are no messages, it will not update until there is one.
+
+Does not work with rndstatus Cog

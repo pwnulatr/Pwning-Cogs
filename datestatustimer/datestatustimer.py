@@ -117,6 +117,7 @@ class Datestatustimer:
 
             if self.last_change == None:
                 self.last_change = int(time.perf_counter())
+                await self.bot.change_presence(game=discord.Game(name=status_verify))
 
             if abs(self.last_change - int(time.perf_counter())) >= 1800: #Every half hour.
                 self.last_change = int(time.perf_counter())
