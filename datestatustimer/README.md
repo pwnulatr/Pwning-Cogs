@@ -8,6 +8,5 @@ Uses the bot's playing status as a countdown to an event.
 `[p]datestatusset force_update` Forces an update to the status if it isn't working properly.
 
 ### Notes:
-The changing of the date is activated by public chat messages, so if there are no messages, it will not update until there is one.
-
-Does not work with rndstatus Cog
+Does not work with rndstatus Cog, so `<p>unload rndstatus` while using this cog. Once you
+no longer need it, unload this one and load rndstatus again.

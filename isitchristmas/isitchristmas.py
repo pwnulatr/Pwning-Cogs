@@ -19,7 +19,7 @@ class Isitchristmas:
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
 # -----------------------------------------------------------------------------
-    @isit.command(name= "christmas", pass_context=False)
+    @isit.command(name="christmas", pass_context=False)
 
     async def _christmas_isit(self):
         """Tells you if it is Christmas or not"""

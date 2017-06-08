@@ -8,6 +8,7 @@ from cogs.utils import checks
 import discord
 import os
 import time
+import asyncio
 
 class Datestatustimer:
     """Calculates the time between dates and makes it the bot \"playing\" status"""
@@ -16,7 +17,6 @@ class Datestatustimer:
         self.bot = bot
         self.file_path = "data/pwning-cogs/datestatustimer/settings.json"
         self.settings = dataIO.load_json(self.file_path)
-        self.last_change = None
 
 #================================GROUP DEFINE==================================
     @commands.group(pass_context=True)
@@ -63,7 +63,7 @@ class Datestatustimer:
 #==============================================================================
     @datestatusset.command(name= "name", pass_context=False)
     @checks.is_owner()
-    async def _name_datestatusset(self, ctx, *, name=None):
+    async def _name_datestatusset(self, *, name=None):
         """Name for the day that you are counting down for. Leave blank to clear."""
 
         if name:
@@ -108,19 +108,12 @@ class Datestatustimer:
         else:
             return "{} Days until {}!".format(days_remaining, datename)
 #==============================================================================
-    async def check_date_looper(self, message):
-        if not message.channel.is_private:
-            current_game = str(message.server.me.game)
-            checkeddate = self.datecheck()
-            status_verify = self.status_creator()
+    async def check_date_looper(self):
+        #checkeddate = self.datecheck() #Todo, implement changes check
+        status_verify = self.status_creator()
 
-            if self.last_change == None:
-                self.last_change = int(time.perf_counter())
-                await self.bot.change_presence(game=discord.Game(name=status_verify))
-
-            if abs(self.last_change - int(time.perf_counter())) >= 1800: #Every half hour.
-                self.last_change = int(time.perf_counter())
-                await self.bot.change_presence(game=discord.Game(name=status_verify))
+        await self.bot.change_presence(game=discord.Game(name=status_verify))
+        await asyncio.sleep(3600)#3600 = 1 hour in seconds
 #==============================================================================
 def check_folders():
     if not os.path.exists("data/pwning-cogs/datestatustimer"):
@@ -138,5 +131,6 @@ def setup(bot):
     check_folders()
     check_files()
     n = Datestatustimer(bot)
-    bot.add_listener(n.check_date_looper, "on_message")
+    loop = asyncio.get_event_loop()
+    loop.create_task(n.check_date_looper())
     bot.add_cog(n)
