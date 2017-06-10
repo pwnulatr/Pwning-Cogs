@@ -8,7 +8,6 @@ from cogs.utils import checks
 import discord
 import os
 import time
-import asyncio
 
 class Datestatustimer:
     """Calculates the time between dates and makes it the bot \"playing\" status"""
@@ -17,6 +16,7 @@ class Datestatustimer:
         self.bot = bot
         self.file_path = "data/pwning-cogs/datestatustimer/settings.json"
         self.settings = dataIO.load_json(self.file_path)
+        self.last_check = None
 
 #================================GROUP DEFINE==================================
     @commands.group(pass_context=True)
@@ -108,12 +108,18 @@ class Datestatustimer:
         else:
             return "{} Days until {}!".format(days_remaining, datename)
 #==============================================================================
-    async def check_date_looper(self):
-        #checkeddate = self.datecheck() #Todo, implement changes check
-        status_verify = self.status_creator()
+    async def check_date_looper(self, message):
+        if not message.channel.is_private:
+            status_verify = self.status_creator()
+            current_game = str(message.server.me.game)
 
-        await self.bot.change_presence(game=discord.Game(name=status_verify))
-        await asyncio.sleep(3600)#3600 = 1 hour in seconds
+            if self.last_check == None: #first run
+                self.last_check = int(time.perf_counter())
+                await self.bot.change_presence(game=discord.Game(name=status_verify))
+
+            if abs(self.last_check - int(time.perf_counter())) >= 3600:
+                if status_verify != current_game:
+                    await self.bot.change_presence(game=discord.Game(name=status_verify))
 #==============================================================================
 def check_folders():
     if not os.path.exists("data/pwning-cogs/datestatustimer"):
@@ -131,6 +137,5 @@ def setup(bot):
     check_folders()
     check_files()
     n = Datestatustimer(bot)
-    loop = asyncio.get_event_loop()
-    loop.create_task(n.check_date_looper())
+    bot.add_listener(n.check_date_looper, "on_message")
     bot.add_cog(n)
