@@ -57,7 +57,9 @@ class Datestatustimer:
                 dataIO.save_json(self.file_path, self.settings)
                 await self.bot.say("Day successfully set to `{}`".format(str(dayinput)))
             else:
-                await self.bot.say("You have not entered a valid day number for the month you have set.")
+                self.settings["DAY_NUMBER"] = dayinput
+                dataIO.save_json(self.file_path, self.settings)
+                await self.bot.say("Day successfully set to `{}`".format(str(dayinput)))
         else:
             await self.bot.say("You have not entered a valid day number for the month you have set.")
 #==============================================================================
