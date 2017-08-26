@@ -162,6 +162,21 @@ class Isitchristmas:
         else:
             await self.bot.say(choice(no))
 # -----------------------------------------------------------------------------
+    @isit.command(name="canadaday", pass_context=False)
+
+    async def _canadaday_isit(self):
+        """Tells you if it is Canada Day or not"""
+        time = datetime.now()
+        month = time.month
+        day = time.day
+        no = ["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"]
+        yes = ["Yes", "Yee", "Das right boi"]
+
+        if month == 7 and day == 1:
+            await self.bot.say(choice(yes))
+        else:
+            await self.bot.say(choice(no))
+# -----------------------------------------------------------------------------
 def setup(bot):
     n = Isitchristmas(bot)
     bot.add_cog(n)

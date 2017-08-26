@@ -437,6 +437,24 @@ class UnitConverter:
 
         await self.bot.say("Your converted currency is `{} bits`".format(convertednumber))
 #------------------------------------------------------------------------------
+    @currency.command(name="r6credits2usd", aliases=["r62usd"], pass_context=False)
+    async def _r6credits2usd_currency(self, userinput: float):
+        """Rainbow Six Credits to US Dollars"""
+
+        mathstuff = userinput / 120
+        convertednumber = round(mathstuff, 2)
+
+        await self.bot.say("Your converted currency is `${}`".format(convertednumber))
+#------------------------------------------------------------------------------
+    @currency.command(name="usd2r6credits", aliases=["usd2r6"], pass_context=False)
+    async def _usd2twitchbits_currency(self, userinput: float):
+        """US Dollars to Rainbow Six Credits"""
+
+        mathstuff = userinput * 120
+        convertednumber = round(mathstuff)
+
+        await self.bot.say("Your converted currency is `{} Rainbow Six Credits`".format(convertednumber))
+#------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
 
