@@ -3,5 +3,5 @@
     "INSTALL_MSG" : "Successfully installed the cog.\nuse `[p]help` to see the commands for datestatustimer under `Datestatustimer`",
     "NAME" : "Datestatustimer",
     "SHORT" : "Counts down days until a set event in bots playing status",
-    "DESCRIPTION" : "Set up a date to have the bot count down to with this cog. Use `<p>datestatusset` to get commands."
+    "DESCRIPTION" : "Set up a date to have the bot count down to with this cog. Use `<p>datestatus` to get commands."
 }
