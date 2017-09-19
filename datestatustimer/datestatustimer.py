@@ -9,7 +9,7 @@ import os
 import time
 
 __author__ = "Pwnulatr"
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 
 monthname = {
     1: "January",
@@ -58,7 +58,7 @@ class Datestatustimer:
                 self.settings["DAY_NUMBER"] = day
                 dataIO.save_json(self.file_path, self.settings)
                 await self.bot.say("Date set to {} of {}".format(day, monthname[month]))
-            elif monthnumber in thirty_month and day <= 30:
+            elif month in thirty_month and day <= 30:
                 self.settings["MONTH_NUMBER"] = month
                 self.settings["DAY_NUMBER"] = day
                 dataIO.save_json(self.file_path, self.settings)
