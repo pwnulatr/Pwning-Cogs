@@ -120,7 +120,7 @@ class Datestatustimer:
         datecheck = self.datecheck()
         typeofformat = type(self.datecheck())
 
-        await self.bot.say("Status: {}\nDays Remaining: {}\nType for days: {}".format(status_verify, datecheck, typeofformat))
+        await self.bot.say("Status: {}\nDays Remaining: {}\nDatatype for days: {}".format(status_verify, datecheck, typeofformat))
 #=============================================================================
 
     def datecheck(self):

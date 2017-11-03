@@ -455,6 +455,20 @@ class UnitConverter:
 
         await self.bot.say("Your converted currency is `{} Rainbow Six Credits`".format(convertednumber))
 #------------------------------------------------------------------------------
+    @currency.command(name="destinysilver2usd", aliases=["d2silver2usd"], pass_context=False)
+    async def _destinysilver2usd_currency(self, userinput: float):
+        """Destiny 2 Silver (Premium currency) to US Dollars"""
+
+        mathstuff = userinput / 100
+        convertednumber = round(mathstuff, 2)
+#------------------------------------------------------------------------------
+    @currency.command(name="usd2destinysilver", aliases=["usd2d2silver"], pass_context=False)
+    async def _usd2destinysilver_currency(self, userinput: float):
+        """US Dollars to Destiny 2 Silver (Premium currency)"""
+
+        mathstuff = userinput * 100
+        convertednumber = round(mathstuff)
+#------------------------------------------------------------------------------
 #||||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
 #------------------------------------------------------------------------------
 
