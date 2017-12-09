@@ -176,12 +176,12 @@ def check_folders():
 
 
 def check_files():
+    f = "data/pwning-cogs/datestatustimer/settings.json"
     settings = {"DATE_NAME": "New Year's", "MONTH_NUMBER": 1, "DAY_NUMBER": 1}
 
-    if not dataIO.is_valid_json("data/pwning-cogs/datestatustimer/settings.json"):
+    if not dataIO.is_valid_json(f):
         print("Creating example settings.json for datestatustimer...")
-        dataIO.save_json(
-            "data/pwning-cogs/datestatustimer/settings.json", settings)
+        dataIO.save_json(f, settings)
 
 
 def setup(bot):

@@ -1,7 +1,7 @@
 {
     "AUTHOR" : "Pwnulatr",
     "INSTALL_MSG" : "Successfully installed the Internet Outage Tally Counter cog.\nUse [p]isit to get a list of holidays you can query",
-    "NAME" : "Internetsoutagain",
+    "NAME" : "Outagetally",
     "SHORT" : "A joke cog to make fun of the amount of times my internet goes out",
     "DESCRIPTION" : "A joke cog that I made to make fun of the amount of times my internet goes out. I uploaded the source because why not?"
 }

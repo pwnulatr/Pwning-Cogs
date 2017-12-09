@@ -1,7 +1,7 @@
 # Is It Christmas?
 Tells you if it is a specific holiday upon given a specific command.
-
-Syntax: `[p]isit <holiday>` A response will be given in the same channel.
+## Syntax:
+`[p]isit <holiday>`
 ### Currently Supports:
 - Christmas
 - Halloween
