@@ -4,7 +4,7 @@ from discord.ext import commands
 from .utils.dataIO import dataIO
 
 __author__ = "Pwnulatr"
-__version__ = "2.0"
+__version__ = "2.0.1"
 
 
 class Outagetally:
@@ -27,25 +27,25 @@ class Outagetally:
             self.settings[user]["Tally"] = 1
             self.settings[user]["Last Outage"] = f"{date_today}"
             dataIO.save_json(self.file_path, self.settings)
-            await self.bot.say("This appears to be your first outage on record.")
+            await self.bot.reply(f"This appears to be your first outage on record.")
         elif user in self.settings:
             current_tally = self.settings[user]['Tally']
             add_to_tally = current_tally + 1
-            # Following 2 lines say what to write to JSON. 3rd line actually says to write.
             self.settings[user]["Tally"] = add_to_tally
             self.settings[user]["Last Outage"] = f"{date_today}"
             dataIO.save_json(self.file_path, self.settings)
-            await self.bot.say(f"Logged! Currently at {add_to_tally} outages.")
+            await self.bot.reply(f"Logged! You're currently at {add_to_tally} outages!")
         else:
-            await self.bot.say("Something went wrong.")
+            await self.bot.reply("Something went wrong.")
 
     @commands.command(no_pm=False, pass_context=True)
     async def howmanytimes(self, ctx):
         """Says what the current tally is"""
 
+        await self.bot.type()
         user = ctx.message.author.id
         tallycount = self.settings[user]['Tally']
-        await self.bot.say(f"You've had {tallycount} outages so far.")
+        await self.bot.reply(f"You've had {tallycount} outages so far!")
 
 
 def check_folders():

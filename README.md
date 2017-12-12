@@ -1,4 +1,7 @@
 # Pwning Cogs
+[![GitHub last commit](https://img.shields.io/github/last-commit/Pwnulatr/Pwning-Cogs.svg?style=for-the-badge)](https://github.com/Pwnulatr/Pwning-Cogs/commits/master)
+[![license](https://img.shields.io/github/license/Pwnulatr/Pwning-Cogs.svg?style=for-the-badge)](https://choosealicense.com/licenses/gpl-3.0/)
+
 A repo for cogs that I make... whenever that may be. These are the current cogs
 and what they do.
 
