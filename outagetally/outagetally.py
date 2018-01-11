@@ -5,7 +5,7 @@ from discord.ext import commands
 from .utils.dataIO import dataIO
 
 __author__ = "Pwnulatr"
-__version__ = "2.1"
+__version__ = "2.1.1"
 
 
 class Outagetally:
@@ -28,7 +28,7 @@ class Outagetally:
             self.settings[user]["Tally"] = 1
             self.settings[user]["Last Outage"] = f"{date_today}"
             dataIO.save_json(self.file_path, self.settings)
-            await self.bot.reply(f"This appears to be your first outage on record.")
+            await self.bot.reply("This appears to be your first outage on record.")
         elif user in self.settings:
             current_tally = self.settings[user]['Tally']
             add_to_tally = current_tally + 1
