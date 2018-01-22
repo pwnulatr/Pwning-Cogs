@@ -3,15 +3,18 @@
 from discord.ext import commands
 from __main__ import send_cmd_help
 
+__author__ = "Pwnulatr"
+__version__ = "0.1.1"
+
 
 class UnitConverter:
     """Unit conversion tool"""
 
     def __init__(self, bot):
         self.bot = bot
-#------------------------------------------------------------------------------
-#|||||||||||||||||||||||||||||||GROUP DEFINING|||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# ||||||||||||||||||||||||||||||GROUP DEFINING|||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
 # Defining the group command and if no subcommand is sent, send the help message
 
     @commands.group(pass_context=True)
@@ -20,313 +23,322 @@ class UnitConverter:
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-#------------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
     @commands.group(pass_context=True)
     async def speed(self, ctx):
         """Units of speed you can convert"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-#------------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
     @commands.group(pass_context=True)
     async def length(self, ctx):
         """Units of distance you can convert"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-#------------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
     @commands.group(pass_context=True)
     async def currency(self, ctx):
         """Units of currency you can convert"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-#------------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
     @commands.group(pass_context=True)
     async def data(self, ctx):
         """Units of data you can convert (In binary form, ex. 1024 not 1000)"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-#------------------------------------------------------------------------------
-#||||||||||||||||||||||||||||||||TEMPERATURE|||||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
-# And thus we begin the Copy-Paste abuse
 
+# -----------------------------------------------------------------------------
+# |||||||||||||||||||||||||||||||TEMPERATURE|||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
+# And thus we begin the Copy-Paste abuse
     @temperature.command(name="f2c", pass_context=False)
     async def _f2c_temperature(self, userinput: float):
         """Fahrenheit to Celsius"""
 
-        convertednumber = (userinput - 32) / 1.8
+        solved = (userinput - 32) / 1.8
 
-        await self.bot.say("Your converted temperature is `{}°C`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°C`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="c2f", pass_context=False)
     async def _c2f_temperature(self, userinput: float):
         """Celsius to Fahrenheit"""
 
-        convertednumber = userinput * 1.8 + 32
+        solved = userinput * 1.8 + 32
 
-        await self.bot.say("Your converted temperature is `{}°F`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°F`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="f2k", pass_context=False)
     async def _f2k_temperature(self, userinput: float):
         """Fahrenheit to Kelvin"""
 
-        convertednumber = (userinput + 459.67) * 5 / 9
+        solved = (userinput + 459.67) * 5 / 9
 
-        await self.bot.say("Your converted temperature is `{}°K`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°K`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="c2k", pass_context=False)
     async def _c2k_temperature(self, userinput: float):
         """Celsius to Kelvin"""
 
-        convertednumber = userinput + 273.15
+        solved = userinput + 273.15
 
-        await self.bot.say("Your converted temperature is `{}°K`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°K`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="r2k", pass_context=False)
     async def _r2k_temperature(self, userinput: float):
         """Rankine to Kelvin"""
 
-        convertednumber = userinput * 5 / 9
+        solved = userinput * 5 / 9
 
-        await self.bot.say("Your converted temperature is `{}°K`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°K`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="c2r", pass_context=False)
     async def _c2r_temperature(self, userinput: float):
         """Celsius to Rankine"""
 
-        convertednumber = (userinput + 273.15) * 9 / 5
+        solved = (userinput + 273.15) * 9 / 5
 
-        await self.bot.say("Your converted temperature is `{}°R`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°R`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="f2r", pass_context=False)
     async def _f2r_temperature(self, userinput: float):
         """Fahrenheit to Rankine"""
 
-        convertednumber = userinput + 459.67
+        solved = userinput + 459.67
 
-        await self.bot.say("Your converted temperature is `{}°R`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°R`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="k2f", pass_context=False)
     async def _k2f_temperature(self, userinput: float):
         """Kelvin to Fahrenheit"""
 
-        convertednumber = userinput * 9 / 5 - 459.67
+        solved = userinput * 9 / 5 - 459.67
 
-        await self.bot.say("Your converted temperature is `{}°F`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°F`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="k2c", pass_context=False)
     async def _k2c_temperature(self, userinput: float):
         """Kelvin to Celsius"""
 
-        convertednumber = userinput - 273.15
+        solved = userinput - 273.15
 
-        await self.bot.say("Your converted temperature is `{}°C`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°C`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="k2r", pass_context=False)
     async def _k2r_temperature(self, userinput: float):
         """Kelvin to Rankine"""
 
-        convertednumber = userinput * 9 / 5
+        solved = userinput * 9 / 5
 
-        await self.bot.say("Your converted temperature is `{}°R`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°R`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="r2f", pass_context=False)
     async def _r2f_temperature(self, userinput: float):
         """Rankine to Fahrenheit"""
 
-        convertednumber = userinput - 459.67
+        solved = userinput - 459.67
 
-        await self.bot.say("Your converted temperature is `{}°F`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°F`")
 
+# -----------------------------------------------------------------------------
     @temperature.command(name="r2c", pass_context=False)
     async def _r2c_temperature(self, userinput: float):
         """Rankine to Celsius"""
 
-        convertednumber = (userinput - 491.67) * 5 / 9
+        solved = (userinput - 491.67) * 5 / 9
 
-        await self.bot.say("Your converted temperature is `{}°C`".format(convertednumber))
-#------------------------------------------------------------------------------
-#||||||||||||||||||||||||||||||||||||SPEED|||||||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted temperature is `{solved}°C`")
 
+# -----------------------------------------------------------------------------
+# |||||||||||||||||||||||||||||||||||SPEED|||||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
     @speed.command(name="mph2kmh", pass_context=False)
     async def _mph2kmh_speed(self, userinput: float):
         """Miles Per Hour to Kilometers Per Hour"""
 
-        convertednumber = userinput * 1.609344
+        solved = userinput * 1.609344
 
-        await self.bot.say("Your converted speed is `{} KMH`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} KMH`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="kmh2mph", pass_context=False)
     async def _kmh2mph_speed(self, userinput: float):
         """Kilometers Per Hour to Miles Per Hour"""
 
-        convertednumber = userinput / 1.609344
+        solved = userinput / 1.609344
 
-        await self.bot.say("Your converted speed is `{} MPH`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} MPH`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="mps2kmh", pass_context=False)
     async def _mps2kmh_speed(self, userinput: float):
         """Meters Per Second to Kilometers Per Hour"""
 
-        convertednumber = userinput * 3.6
+        solved = userinput * 3.6
 
-        await self.bot.say("Your converted speed is `{} KMH`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} KMH`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="kmh2mps", pass_context=False)
     async def _kmh2mps_speed(self, userinput: float):
         """Kilometers Per Hour to Meters Per Second"""
 
-        convertednumber = userinput / 3.6
+        solved = userinput / 3.6
 
-        await self.bot.say("Your converted speed is `{} M/S`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} M/S`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="fps2mph", pass_context=False)
     async def _fps2mph_speed(self, userinput: float):
         """Feet Per Second to Miles Per Hour"""
 
-        convertednumber = userinput / 1.46666666666667
+        solved = userinput / 1.46666666666667
 
-        await self.bot.say("Your converted speed is `{} MPH`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} MPH`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="mph2fps", pass_context=False)
     async def _mph2fps_speed(self, userinput: float):
         """Miles Per Hour to Feet Per Second"""
 
-        convertednumber = userinput * 1.46666666666667
+        solved = userinput * 1.46666666666667
 
-        await self.bot.say("Your converted speed is `{} FPS`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} FPS`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="knots2mph", pass_context=False)
     async def _knots2mph_speed(self, userinput: float):
         """Knots to Miles Per Hour"""
 
-        convertednumber = userinput * 1.15078
+        solved = userinput * 1.15078
 
-        await self.bot.say("Your converted speed is `{} MPH`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} MPH`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="mph2knots", pass_context=False)
     async def _mph2knots_speed(self, userinput: float):
         """Miles Per Hour to Knots"""
 
-        convertednumber = userinput / 1.15078
+        solved = userinput / 1.15078
 
-        await self.bot.say("Your converted speed is `{} Knots`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} Knots`")
 
+# -----------------------------------------------------------------------------
     @speed.command(name="kmh2knots", pass_context=False)
     async def _kmh2knots_speed(self, userinput: float):
         """Kilometers Per Hour to Knots"""
 
         anothaconversion = userinput / 1.609344
-        convertednumber = anothaconversion / 1.15078
+        solved = anothaconversion / 1.15078
 
-        await self.bot.say("Your converted speed is `{} Knots`".format(convertednumber))
-#------------------------------------------------------------------------------
-#|||||||||||||||||||||||||||||||||||LENGTH|||||||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted speed is `{solved} Knots`")
 
+# -----------------------------------------------------------------------------
+# ||||||||||||||||||||||||||||||||||LENGTH|||||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
+# Thanks Exbrandong for help with some of the math
     @length.command(name="cm2f", pass_context=False)
     async def _cm2f_length(self, userinput: float):
         """Centimeters to Feet"""
 
-        convertednumber = userinput / 30.48
-        inches = convertednumber * 12
+        solved = userinput / 30.48
+        inches = solved * 12
 
-        if convertednumber < 1:
-            await self.bot.say("Your converted length is `{} feet` or `0 feet {} inches`".format(convertednumber, inches))
+        if solved < 1:
+            await self.bot.say(f"Your converted length is `{solved} feet` or "
+                               f"`0 feet {inches} inches`")
         else:
-            remaininch = inches - (12 * int(convertednumber))
-            await self.bot.say("Your converted length is `" + str(convertednumber) + " feet` or `" + str(int(convertednumber)) + " feet " + str(remaininch) + " inches`")
-# Thanks for the help with the math Exbrandong :D couldn't have done it w/o you
-#------------------------------------------------------------------------------
+            remain_inch = inches - (12 * int(solved))
+            floor_solved = int(solved)
 
+            await self.bot.say(f"Your converted length is `{solved} feet` or "
+                               f"`{floor_solved} feet {remain_inch} inches`")
+
+# -----------------------------------------------------------------------------
     @length.command(name="cm2in", pass_context=False)
     async def _cm2in_length(self, userinput: float):
         """Centimeters to Inches"""
 
-        convertednumber = userinput / 2.54
+        solved = userinput / 2.54
 
-        if convertednumber < 12:
-            await self.bot.say("Your converted length is `{} inches`".format(convertednumber))
+        if solved < 12:
+            await self.bot.say(f"Your converted length is `{solved} inches`")
         else:
-            feet = convertednumber / 12
-            inches = convertednumber - (12 * int(feet))
-            await self.bot.say("Your converted length is `" + str(convertednumber) + " inches` or `" + str(int(feet)) + " feet " + str(inches) + " inches`")
-#------------------------------------------------------------------------------
+            feet = solved / 12
+            inches = solved - (12 * int(feet))
+            floor_feet = int(feet)
+            await self.bot.say(f"Your converted length is `{solved} inches` or"
+                               f" `{floor_feet} feet {inches} inches`")
 
+# -----------------------------------------------------------------------------
     @length.command(name="f2cm", pass_context=False)
     async def _f2cm_length(self, userinput: float):
         """Feet to Centimeters"""
 
-        convertednumber = userinput * 30.48
+        solved = userinput * 30.48
 
-        await self.bot.say("Your converted length is `{} centimeters`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted length is `{solved} centimeters`")
 
+# -----------------------------------------------------------------------------
     @length.command(name="cm2mm", pass_context=False)
     async def _cm2mm_length(self, userinput: float):
         """Centimeters to Millimeters"""
 
-        convertednumber = userinput * 10
+        solved = userinput * 10
 
-        await self.bot.say("Your converted length is `{} Millimeters`")
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted length is `{solved} Millimeters`")
 
+# -----------------------------------------------------------------------------
     @length.command(name="f2mm", pass_context=False)
     async def _f2mm_length(self, userinput: float):
         """Feet to Millimeters"""
 
-        convertednumber = userinput * 304.8
+        solved = userinput * 304.8
 
-        await self.bot.say("Your converted length is `{} Millimeters`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted length is `{solved} Millimeters`")
 
+# -----------------------------------------------------------------------------
     @length.command(name="f2in", pass_context=False)
     async def _f2in_length(self, userinput: float):
         """Feet to Inches"""
 
-        convertednumber = userinput * 12
+        solved = userinput * 12
 
-        await self.bot.say("Your converted length is `{} Inches`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted length is `{solved} Inches`")
 
+# -----------------------------------------------------------------------------
     @length.command(name="f2m", pass_context=False)
     async def _f2m_length(self, userinput: float):
         """Feet to Meters"""
 
-        convertednumber = userinput * 0.3048
+        solved = userinput * 0.3048
 
-        await self.bot.say("Your converted length is `{} Meters`".format(convertednumber))
-#------------------------------------------------------------------------------
-    #
+        await self.bot.say(f"Your converted length is `{solved} Meters`")
+
+# -----------------------------------------------------------------------------
+
     # @length.command(name="height", pass_context=False)
-    # async def _height_length(self, metric_or_imperial, feet_or_meters: float, inches_or_centimeters: float):
+    # async def _height_length(self, metric_or_imperial,
+    #                          feet_or_meters: float,
+    #                          inches_or_centimeters: float):
     #     """Converts from metric height to imperial height or vice versa"""
     #
     #     if metric_or_imperial == "metric":
@@ -338,7 +350,9 @@ class UnitConverter:
     #         remaining_inches = total_inches - (feet * 12)
     #         rounded_feet = str(int(feet))
     #
-    #         await self.bot.say("`{} meters, {} centimeters` equals `{}'{}\"`".format(meters, centimeters, rounded_feet, remaining_inches))
+    #         await self.bot.say(
+    #             f"`{meters} meters, {centimeters} centimeters` equals "
+    #             f"`{rounded_feet}'{remaining_inches}\"`")
     #     elif metric_or_imperial == "imperial":
     #         feet = feet_or_meters
     #         inches = inches_or_centimeters
@@ -348,330 +362,345 @@ class UnitConverter:
     #         remaining_centimeters = total_centimeters - (meters * 100)
     #         rounded_meters = int(meters)
     #         if meters < 1:
-    #             await self.bot.say("`{}'{}\"` equals `{} centimeters`".format(feet, inches, total_centimeters))
+    #             await self.bot.say(f"`{feet}'{inches}\"` equals "
+    #                                f"`{total_centimeters} centimeters`")
     #         else:
     #             rounded_cm = int(remaining_centimeters)
-    #             await self.bot.say("`{}'{}\"` equals `{} meters, {} centimeters`".format(feet, inches, rounded_meters, rounded_cm))
+    #             await self.bot.say(f"`{feet}'{inches}\"` equals "
+    #                                f"`{rounded_meters} meters, {rounded_cm} "
+    #                                "centimeters`")
     #     else:
-    #         await self.bot.say("Please format your command properly.\neg.\n```"+
-    #                            "<p>length imperial 10 5```Note that the second "+
-    #                            "arg is either `imperial` or `metric`\nIf there "+
-    #                            "are no feet/meters to measure, just use a 0.")
-#------------------------------------------------------------------------------
-#||||||||||||||||||||||||||||||||||CURRENCY||||||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
+    #         await self.bot.say("Please format your command properly.\neg.\n```"
+    #                            "<p>length imperial 10 5```Note that the second"
+    #                            " arg is either `imperial` or `metric`\nIf "
+    #                            "there are no feet/meters to measure, just use "
+    #                            "a 0.")
 
+# -----------------------------------------------------------------------------
+# |||||||||||||||||||||||||||||||||CURRENCY||||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
     @currency.command(name="msp2dollar", pass_context=False)
     async def _msp2dollar_currency(self, userinput: float):
         """Microsoft Points to US/CA Dollars"""
 
         mathstuff = userinput / 80
-        convertednumber = round(mathstuff, 2)
+        solved = round(mathstuff, 2)
 
-        await self.bot.say("Your converted currency is `${}`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `${solved}`")
 
+# -----------------------------------------------------------------------------
     @currency.command(name="dollar2msp", pass_context=False)
     async def _dollar2msp_currency(self, userinput: float):
         """US/CA Dollars to Microsoft Points"""
 
-        convertednumber = userinput * 80
+        solved = userinput * 80
 
-        await self.bot.say("Your converted currency is `{} Points`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `{solved} Points`")
 
+# -----------------------------------------------------------------------------
     @currency.command(name="platinum2usd", aliases=["plat2usd"], pass_context=False)
     async def _platinum2usd_currency(self, userinput: float):
         """Platinum (WarFrame currency) to US Dollars"""
 
         mathstuff = userinput / 15
-        convertednumber = round(mathstuff, 2)
+        solved = round(mathstuff, 2)
 
-        await self.bot.say("Your converted currency is `${}`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `${solved}`")
 
+# -----------------------------------------------------------------------------
     @currency.command(name="usd2platinum", aliases=["usd2plat"], pass_context=False)
     async def _usd2platinum_currency(self, userinput: float):
         """US Dollars to Platinum (WarFrame currency)"""
 
-        convertednumber = userinput * 15
+        solved = userinput * 15
 
-        await self.bot.say("Your converted currency is `{} Platinum`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `{solved} Platinum`")
 
+# -----------------------------------------------------------------------------
     @currency.command(name="platinum2cad", aliases=["plat2cad"], pass_context=False)
     async def _platinum2cad_currency(self, userinput: float):
         """Platinum (WarFrame currency) to CA Dollars"""
 
         mathstuff = userinput / 13.66120218579235
-        convertednumber = round(mathstuff, 2)
+        solved = round(mathstuff, 2)
 
-        await self.bot.say("Your converted currency is `${}`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `${solved}`")
 
+# -----------------------------------------------------------------------------
     @currency.command(name="cad2platinum", aliases=["cad2plat"], pass_context=False)
     async def _cad2platinum_currency(self, userinput: float):
         """CA Dollars to Platinum (WarFrame currency)"""
 
         mathstuff = userinput * 13.66120218579235
-        convertednumber = round(mathstuff)
+        solved = round(mathstuff)
 
-        await self.bot.say("Your converted currency is `{} Platinum`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `{solved} Platinum`")
+
+# -----------------------------------------------------------------------------
 # 1 Bit = 0.014 USD when dividing 7 by 500 because it costs $7 for 500 bits.
     @currency.command(name="twitchbits2usd", aliases=["bits2usd"], pass_context=False)
     async def _twitchbits_currency(self, userinput: int):
         """Twitch Bits to US Dollars"""
 
         mathstuff = userinput * 0.014
-        convertednumber = round(mathstuff, 2)
+        solved = round(mathstuff, 2)
 
-        await self.bot.say("Your converted currency is `${}`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `${solved}`")
+
+# -----------------------------------------------------------------------------
     @currency.command(name="usd2twitchbits", aliases=["usd2bits"], pass_context=False)
     async def _usd2twitchbits_currency(self, userinput: float):
         """US Dollars to Twitch Bits"""
 
         mathstuff = userinput / 0.014
-        convertednumber = round(mathstuff)
+        solved = round(mathstuff)
 
-        await self.bot.say("Your converted currency is `{} bits`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `{solved} bits`")
+
+# -----------------------------------------------------------------------------
     @currency.command(name="r6credits2usd", aliases=["r62usd"], pass_context=False)
     async def _r6credits2usd_currency(self, userinput: float):
         """Rainbow Six Credits to US Dollars"""
 
         mathstuff = userinput / 120
-        convertednumber = round(mathstuff, 2)
+        solved = round(mathstuff, 2)
 
-        await self.bot.say("Your converted currency is `${}`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `${solved}`")
+
+# -----------------------------------------------------------------------------
     @currency.command(name="usd2r6credits", aliases=["usd2r6"], pass_context=False)
     async def _usd2twitchbits_currency(self, userinput: float):
         """US Dollars to Rainbow Six Credits"""
 
         mathstuff = userinput * 120
-        convertednumber = round(mathstuff)
+        solved = round(mathstuff)
 
-        await self.bot.say("Your converted currency is `{} Rainbow Six Credits`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted currency is `{solved} Rainbow Six Credits`")
+
+# -----------------------------------------------------------------------------
     @currency.command(name="destinysilver2usd", aliases=["d2silver2usd"], pass_context=False)
     async def _destinysilver2usd_currency(self, userinput: float):
         """Destiny 2 Silver (Premium currency) to US Dollars"""
 
         mathstuff = userinput / 100
-        convertednumber = round(mathstuff, 2)
-#------------------------------------------------------------------------------
+        solved = round(mathstuff, 2)
+
+        await self.bot.say(f"Your converted currency is `${solved}`")
+
+# -----------------------------------------------------------------------------
     @currency.command(name="usd2destinysilver", aliases=["usd2d2silver"], pass_context=False)
     async def _usd2destinysilver_currency(self, userinput: float):
         """US Dollars to Destiny 2 Silver (Premium currency)"""
 
         mathstuff = userinput * 100
-        convertednumber = round(mathstuff)
-#------------------------------------------------------------------------------
-#||||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
+        solved = round(mathstuff)
 
+        await self.bot.say(f"Your converted currency is `{solved} Silver`")
+
+# -----------------------------------------------------------------------------
+# |||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
     @data.command(name="bits2bytes", pass_context=False)
     async def _bits2bytes_data(self, userinput: float):
         """Bits to Bytes (will work with any data prefix if converting to same prefix)"""
 
-        convertednumber = userinput / 8
+        solved = userinput / 8
 
-        await self.bot.say("Your converted data amount is `{} bytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} bytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="bytes2bits", pass_context=False)
     async def _bytes2bits_data(self, userinput: float):
         """Bytes to Bits (will work with any data prefix if converting to same prefix)"""
 
-        convertednumber = userinput * 8
+        solved = userinput * 8
 
-        await self.bot.say("Your converted data amount is `{} bits`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} bits`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="b2kb", pass_context=False)
     async def _b2kb_data(self, userinput: float):
         """Bits/Bytes to Kilobits/Kilobytes, respectively"""
 
-        convertednumber = userinput / 1024
+        solved = userinput / 1024
 
-        await self.bot.say("Your converted data amount is `{} Kilobits/Kilobytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Kilobits/Kilobytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="b2mb", pass_context=False)
     async def _b2mb_data(self, userinput: float):
         """Bits/Bytes to Megabits/Megabytes, respectively"""
 
-        convertednumber = userinput / 1048576
+        solved = userinput / 1048576
 
-        await self.bot.say("Your converted data amount is `{} Megabits/Megabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Megabits/Megabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="b2gb", pass_context=False)
     async def _b2gb_data(self, userinput: float):
         """Bits/Bytes to Gigabits/Gigabytes, respectively"""
 
-        convertednumber = userinput / 1073741824
+        solved = userinput / 1073741824
 
-        await self.bot.say("Your converted data amount is `{} Gigabits/Gigabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Gigabits/Gigabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="b2tb", pass_context=False)
     async def _b2tb_data(self, userinput: float):
         """Bits/Bytes to Terabits/Terabytes, respectively"""
 
-        convertednumber = userinput / 1099511627776
+        solved = userinput / 1099511627776
 
-        await self.bot.say("Your converted data amount is `{} Terabits/Terabytes`".format(convertednumber))
-#||||||||||||||||||||||||||||||||||KILOBITS||||||||||||||||||||||||||||||||||||
+        await self.bot.say(f"Your converted data amount is `{solved} Terabits/Terabytes`")
 
+# |||||||||||||||||||||||||||||||||KILOBITS||||||||||||||||||||||||||||||||||||
     @data.command(name="kb2b", pass_context=False)
     async def _kb2b_data(self, userinput: float):
         """Kilobits/Kilobytes to Bits/Bytes, respectively"""
 
-        convertednumber = userinput * 1024
+        solved = userinput * 1024
 
-        await self.bot.say("Your converted data amount is `{} Bits/Bytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Bits/Bytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="kb2mb", pass_context=False)
     async def _kb2mb_data(self, userinput: float):
         """Kilobits/Kilobytes to Megabits/Megabytes, respectively"""
 
-        convertednumber = userinput / 1024
+        solved = userinput / 1024
 
-        await self.bot.say("Your converted data amount is `{} Megabits/Megabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Megabits/Megabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="kb2gb", pass_context=False)
     async def _kb2gb_data(self, userinput: float):
         """Kilobits/Kilobytes to Gigabits/Gigabytes, respectively"""
 
-        convertednumber = userinput / 1048576
+        solved = userinput / 1048576
 
-        await self.bot.say("Your converted data amount is `{} Gigabits/Gigabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Gigabits/Gigabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="kb2tb", pass_context=False)
     async def _kb2tb_data(self, userinput: float):
         """Kilobits/Kilobytes to Gigabits/Gigabytes, respectively"""
 
-        convertednumber = userinput / 1073741824
+        solved = userinput / 1073741824
 
-        await self.bot.say("Your converted data amount is `{} Terabits/Terabytes`".format(convertednumber))
-#||||||||||||||||||||||||||||||||||MEGABITS||||||||||||||||||||||||||||||||||||
+        await self.bot.say(f"Your converted data amount is `{solved} Terabits/Terabytes`")
 
+# |||||||||||||||||||||||||||||||||MEGABITS||||||||||||||||||||||||||||||||||||
     @data.command(name="mb2b", pass_context=False)
     async def _mb2b_data(self, userinput: float):
         """Megabits/Megabytes to Bits/Bytes, respectively"""
 
-        convertednumber = userinput * 1048576
+        solved = userinput * 1048576
 
-        await self.bot.say("Your converted data amount is `{} Bits/Bytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Bits/Bytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="mb2kb", pass_context=False)
     async def _mb2kb_data(self, userinput: float):
         """Megabits/Megabytes to Kilobits/Kilobytes, respectively"""
 
-        convertednumber = userinput * 1024
+        solved = userinput * 1024
 
-        await self.bot.say("Your converted data amount is `{} Kilobits/Kilobytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Kilobits/Kilobytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="mb2gb", pass_context=False)
     async def _mb2gb_data(self, userinput: float):
         """Megabits/Megabytes to Gigabits/Gigabytes, respectively"""
 
-        convertednumber = userinput / 1024
+        solved = userinput / 1024
 
-        await self.bot.say("Your converted data amount is `{} Gigabits/Gigabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Gigabits/Gigabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="mb2tb", pass_context=False)
     async def _mb2tb_data(self, userinput: float):
         """Megabits/Megabytes to Terabits/Terabytes, respectively"""
 
-        convertednumber = userinput / 1048576
+        solved = userinput / 1048576
 
-        await self.bot.say("Your converted data amount is `{} Terabits/Terabytes`".format(convertednumber))
-#||||||||||||||||||||||||||||||||||GIGABITS||||||||||||||||||||||||||||||||||||
+        await self.bot.say(f"Your converted data amount is `{solved} Terabits/Terabytes`")
 
+# |||||||||||||||||||||||||||||||||GIGABITS||||||||||||||||||||||||||||||||||||
     @data.command(name="gb2b", pass_context=False)
     async def _gb2b_data(self, userinput: float):
         """Gigabits/Gigabytes to Bits/Bytes, respectively"""
 
-        convertednumber = userinput * 1073741824
+        solved = userinput * 1073741824
 
-        await self.bot.say("Your converted data amount is `{} Bits/Bytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Bits/Bytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="gb2kb", pass_context=False)
     async def _gb2kb_data(self, userinput: float):
         """Gigabits/Gigabytes to Kilobits/Kilobytes, respectively"""
 
-        convertednumber = userinput * 1048576
+        solved = userinput * 1048576
 
-        await self.bot.say("Your converted data amount is `{} Kilobits/Kilobytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Kilobits/Kilobytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="gb2mb", pass_context=False)
     async def _gb2mb_data(self, userinput: float):
         """Gigabits/Gigabytes to Kilobits/Kilobytes, respectively"""
 
-        convertednumber = userinput * 1024
+        solved = userinput * 1024
 
-        await self.bot.say("Your converted data amount is `{} Megabits/Megabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Megabits/Megabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="gb2tb", pass_context=False)
     async def _gb2tb_data(self, userinput: float):
         """Gigabits/Gigabytes to Terabits/Terabytes, respectively"""
 
-        convertednumber = userinput / 1024
+        solved = userinput / 1024
 
-        await self.bot.say("Your converted data amount is `{} Terabits/Terabytes`".format(convertednumber))
-#||||||||||||||||||||||||||||||||||TERABITS||||||||||||||||||||||||||||||||||||
+        await self.bot.say(f"Your converted data amount is `{solved} Terabits/Terabytes`")
 
+# |||||||||||||||||||||||||||||||||TERABITS||||||||||||||||||||||||||||||||||||
     @data.command(name="tb2b", pass_context=False)
     async def _tb2b_data(self, userinput: float):
         """Terabits/Terabytes to Bits/Bytes, respectively"""
 
-        convertednumber = userinput * 1099511627776
+        solved = userinput * 1099511627776
 
-        await self.bot.say("Your converted data amount is `{} Bits/Bytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Bits/Bytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="tb2kb", pass_context=False)
     async def _tb2kb_data(self, userinput: float):
         """Terabits/Terabytes to Kilobits/Kilobytes, respectively"""
 
-        convertednumber = userinput * 1073741824
+        solved = userinput * 1073741824
 
-        await self.bot.say("Your converted data amount is `{} Kilobits/Kilobytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Kilobits/Kilobytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="tb2mb", pass_context=False)
     async def _tb2mb_data(self, userinput: float):
         """Terabits/Terabytes to Megabits/Megabytes, respectively"""
 
-        convertednumber = userinput * 1048576
+        solved = userinput * 1048576
 
-        await self.bot.say("Your converted data amount is `{} Megabits/Megabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Megabits/Megabytes`")
 
+# -----------------------------------------------------------------------------
     @data.command(name="tb2gb", pass_context=False)
     async def _tb2gb_data(self, userinput: float):
         """Terabits/Terabytes to Gigabits/Gigabytes, respectively"""
 
-        convertednumber = userinput * 1024
+        solved = userinput * 1024
 
-        await self.bot.say("Your converted data amount is `{} Gigabits/Gigabytes`".format(convertednumber))
-#------------------------------------------------------------------------------
-#|||||||||||||||||||||||||||||||||||DEFINE|||||||||||||||||||||||||||||||||||||
-#------------------------------------------------------------------------------
+        await self.bot.say(f"Your converted data amount is `{solved} Gigabits/Gigabytes`")
 
+
+# -----------------------------------------------------------------------------
+# ||||||||||||||||||||||||||||||||||DEFINE|||||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
 def setup(bot):
     n = UnitConverter(bot)
     bot.add_cog(n)
