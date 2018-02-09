@@ -9,8 +9,6 @@ If you would like to add my repo, use this command in Discord:
 
 `[p]cog repo add pwning-cogs https://github.com/pwnulatr/Pwning-Cogs`
 ## [Date Status Timer](https://github.com/pwnulatr/Pwning-Cogs/tree/master/datestatustimer)
-(WIP)
-
 A cog that will count down the days to an event that only the owner can set.
 ## [Internet Outage Tally Count](https://github.com/pwnulatr/Pwning-Cogs/tree/master/outagetally)
 A joke cog that tallies the amount of times that your internet has gone out.

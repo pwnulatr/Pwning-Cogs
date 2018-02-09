@@ -1,10 +1,10 @@
-# Sauce: rapidtables.com AND checkyourmath.com
+# Sauce: rapidtables.com, checkyourmath.com & Wikipedia
 # Coded by Pwnulatr with a ton of math help from Exbrandong
 from discord.ext import commands
 from __main__ import send_cmd_help
 
 __author__ = "Pwnulatr"
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 
 
 class UnitConverter:
@@ -52,6 +52,14 @@ class UnitConverter:
     @commands.group(pass_context=True)
     async def data(self, ctx):
         """Units of data you can convert (In binary form, ex. 1024 not 1000)"""
+
+        if ctx.invoked_subcommand is None:
+            await send_cmd_help(ctx)
+
+# -----------------------------------------------------------------------------
+    @commands.group(pass_context=True)
+    async def weight(self, ctx):
+        """Units of weight you can convert"""
 
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
@@ -334,10 +342,28 @@ class UnitConverter:
         await self.bot.say(f"Your converted length is `{solved} Meters`")
 
 # -----------------------------------------------------------------------------
+    @length.command(name="in2mm", pass_context=False)
+    async def _in2mm_length(self, userinput: float):
+        """Inches to Millimeters"""
+
+        solved = userinput * 25.4
+
+        await self.bot.say(f"Your converted length is `{solved} Millimeters`")
+
+    # -----------------------------------------------------------------------------
+    @length.command(name="mm2in", pass_context=False)
+    async def _mm2in_length(self, userinput: float):
+        """Millimeters to Inches"""
+
+        solved = userinput / 25.4
+
+        await self.bot.say(f"Your converted length is `{solved} Inches`")
+
+    # -----------------------------------------------------------------------------
 
     # @length.command(name="height", pass_context=False)
     # async def _height_length(self, metric_or_imperial,
-    #                          feet_or_meters: float,
+    #                          feet_or_meters: int,
     #                          inches_or_centimeters: float):
     #     """Converts from metric height to imperial height or vice versa"""
     #
@@ -696,6 +722,125 @@ class UnitConverter:
         solved = userinput * 1024
 
         await self.bot.say(f"Your converted data amount is `{solved} Gigabits/Gigabytes`")
+
+# -----------------------------------------------------------------------------
+# ||||||||||||||||||||||||||||||||||WEIGHT|||||||||||||||||||||||||||||||||||||
+# -----------------------------------------------------------------------------
+    @weight.command(name="g2oz", pass_context=False)
+    async def _g2oz_weight(self, userinput: float):
+        """Grams to Ounces"""
+
+        solved = userinput / 28.34952
+
+        await self.bot.say(f"Your converted weight is `{solved} oz`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="g2lbs", pass_context=False)
+    async def _g2lbs_weight(self, userinput: float):
+        """Grams to Pounds"""
+
+        solved = userinput / 453.59237
+
+        await self.bot.say(f"Your converted weight is `{solved} lbs`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="oz2g", pass_context=False)
+    async def _oz2g_weight(self, userinput: float):
+        """Ounces to Grams"""
+
+        solved = userinput * 28.34952
+
+        await self.bot.say(f"Your converted weight is `{solved} g`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="oz2lbs", pass_context=False)
+    async def _oz2lbs_weight(self, userinput: float):
+        """Ounces to Pounds"""
+
+        solved = userinput / 16
+
+        await self.bot.say(f"Your converted weight is `{solved} lbs`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="oz2kg", pass_context=False)
+    async def _oz2kg_weight(self, userinput: float):
+        """Ounces to Kilograms"""
+
+        solved = userinput * 0.02834952
+
+        await self.bot.say(f"Your converted weight is `{solved} kg`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="lbs2g", pass_context=False)
+    async def _lbs2g_weight(self, userinput: float):
+        """Pounds to Grams"""
+
+        solved = userinput * 453.59237
+
+        await self.bot.say(f"Your converted weight is `{solved} g`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="lbs2oz", pass_context=False)
+    async def _lbs2oz_weight(self, userinput: float):
+        """Pounds to Ounces"""
+
+        solved = userinput * 16
+
+        await self.bot.say(f"Your converted weight is `{solved} oz`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="lbs2s", aliases=["lbs2stones"], pass_context=False)
+    async def _lbs2s_weight(self, userinput: float):
+        """Pounds to Stones"""
+
+        solved = userinput / 14
+
+        await self.bot.say(f"Your converted weight is `{solved} Stones`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="lbs2t", aliases=["lbs2tons"], pass_context=False)
+    async def _lbs2t_weight(self, userinput: float):
+        """Pounds to Metric Tons"""
+
+        solved = userinput * 0.00045359237
+
+        await self.bot.say(f"Your converted weight is `{solved} Tons`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="kg2oz", pass_context=False)
+    async def _kg2oz_weight(self, userinput: float):
+        """Kilograms to Ounces"""
+
+        solved = userinput / 0.02834952
+
+        await self.bot.say(f"Your converted weight is `{solved} oz`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="kg2lbs", pass_context=False)
+    async def _kg2lbs_weight(self, userinput: float):
+        """Kilograms to Pounds"""
+
+        solved = userinput / 0.45359237
+
+        await self.bot.say(f"Your converted weight is `{solved} lbs`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="s2lbs", aliases=["stones2lbs"], pass_context=False)
+    async def _s2lbs_weight(self, userinput: float):
+        """Stones to Pounds"""
+
+        solved = userinput * 14
+
+        await self.bot.say(f"Your converted weight is `{solved} lbs`")
+
+# -----------------------------------------------------------------------------
+    @weight.command(name="t2lbs", aliases=["tons2lbs"], pass_context=False)
+    async def _t2lbs_weight(self, userinput: float):
+        """Metric Tons to Pounds"""
+
+        solved = userinput / 0.00045359237
+
+        await self.bot.say(f"Your converted weight is `{solved} lbs`")
 
 
 # -----------------------------------------------------------------------------

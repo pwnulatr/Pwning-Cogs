@@ -3,5 +3,5 @@
     "INSTALL_MSG" : "Successfully installed the cog.\nuse `[p]help` to see the commands for conversion under `UnitConverter`",
     "NAME" : "UnitConverter",
     "SHORT" : "Converts units of measurement.",
-    "DESCRIPTION" : "Converts different units of measurement.\nTemperature \nSpeed \nData \nLength (Partially)"
+    "DESCRIPTION" : "Converts different units of measurement. Currently a WIP."
 }
