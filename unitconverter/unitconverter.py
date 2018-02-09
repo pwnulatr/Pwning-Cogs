@@ -4,7 +4,7 @@ from discord.ext import commands
 from __main__ import send_cmd_help
 
 __author__ = "Pwnulatr"
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 
 class UnitConverter:
@@ -350,7 +350,7 @@ class UnitConverter:
 
         await self.bot.say(f"Your converted length is `{solved} Millimeters`")
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     @length.command(name="mm2in", pass_context=False)
     async def _mm2in_length(self, userinput: float):
         """Millimeters to Inches"""
@@ -359,48 +359,6 @@ class UnitConverter:
 
         await self.bot.say(f"Your converted length is `{solved} Inches`")
 
-    # -----------------------------------------------------------------------------
-
-    # @length.command(name="height", pass_context=False)
-    # async def _height_length(self, metric_or_imperial,
-    #                          feet_or_meters: int,
-    #                          inches_or_centimeters: float):
-    #     """Converts from metric height to imperial height or vice versa"""
-    #
-    #     if metric_or_imperial == "metric":
-    #         meters = feet_or_meters
-    #         centimeters = inches_or_centimeters
-    #         total_centimeters = (meters * 100) + centimeters
-    #         total_inches = total_centimeters / 2.54
-    #         feet = total_inches / 12
-    #         remaining_inches = total_inches - (feet * 12)
-    #         rounded_feet = str(int(feet))
-    #
-    #         await self.bot.say(
-    #             f"`{meters} meters, {centimeters} centimeters` equals "
-    #             f"`{rounded_feet}'{remaining_inches}\"`")
-    #     elif metric_or_imperial == "imperial":
-    #         feet = feet_or_meters
-    #         inches = inches_or_centimeters
-    #         total_inches = (feet * 12) + inches
-    #         total_centimeters = total_inches * 2.54
-    #         meters = total_centimeters / 100
-    #         remaining_centimeters = total_centimeters - (meters * 100)
-    #         rounded_meters = int(meters)
-    #         if meters < 1:
-    #             await self.bot.say(f"`{feet}'{inches}\"` equals "
-    #                                f"`{total_centimeters} centimeters`")
-    #         else:
-    #             rounded_cm = int(remaining_centimeters)
-    #             await self.bot.say(f"`{feet}'{inches}\"` equals "
-    #                                f"`{rounded_meters} meters, {rounded_cm} "
-    #                                "centimeters`")
-    #     else:
-    #         await self.bot.say("Please format your command properly.\neg.\n```"
-    #                            "<p>length imperial 10 5```Note that the second"
-    #                            " arg is either `imperial` or `metric`\nIf "
-    #                            "there are no feet/meters to measure, just use "
-    #                            "a 0.")
 
 # -----------------------------------------------------------------------------
 # |||||||||||||||||||||||||||||||||CURRENCY||||||||||||||||||||||||||||||||||||
