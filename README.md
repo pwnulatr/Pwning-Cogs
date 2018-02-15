@@ -15,6 +15,8 @@ A joke cog that tallies the amount of times that your internet has gone out.
 Now with individual user stats!
 ## [Is It Christmas?](https://github.com/pwnulatr/Pwning-Cogs/tree/master/isitchristmas)
 A cog that tells tells you if it is a specific holiday when you ask.
+## [Quick Role Create](https://github.com/pwnulatr/Pwning-Cogs/tree/master/quickrolecreate)
+A cog that quickly creates a role with no permissions, a name and a color.
 ## [Unit Converter](https://github.com/pwnulatr/Pwning-Cogs/tree/master/unitconverter)
 A cog that converts from one unit of measurement to another and displays the
 result in chat.

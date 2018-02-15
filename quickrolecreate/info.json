@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "Pwnulatr",
+    "INSTALL_MSG" : "Successfully installed the cog.\nuse `[p]help` to see the commands under `Quickrolecreate`",
+    "NAME" : "Quickrolecreate",
+    "SHORT" : "Quickly creates a role.",
+    "DESCRIPTION" : "Quickly creates a No Permissions role with a color using one command."
+}
