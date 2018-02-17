@@ -21,4 +21,3 @@ A cog that will convert most units into units of measurement.
 ### Future Goals for This Cog
 - Completely revamp to make it simpler
 - Add a lot more different units
-- Support decimals
