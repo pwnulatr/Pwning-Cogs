@@ -9,14 +9,19 @@ If you would like to add my repo, use this command in Discord:
 
 `[p]cog repo add pwning-cogs https://github.com/pwnulatr/Pwning-Cogs`
 ## [Date Status Timer](https://github.com/pwnulatr/Pwning-Cogs/tree/master/datestatustimer)
+##### Requirements: None
 A cog that will count down the days to an event that only the owner can set.
 ## [Internet Outage Tally Count](https://github.com/pwnulatr/Pwning-Cogs/tree/master/outagetally)
+##### Requirements: None
 A joke cog that tallies the amount of times that your internet has gone out.
 Now with individual user stats!
 ## [Is It Christmas?](https://github.com/pwnulatr/Pwning-Cogs/tree/master/isitchristmas)
+##### Requirements: None
 A cog that tells tells you if it is a specific holiday when you ask.
 ## [Quick Role Create](https://github.com/pwnulatr/Pwning-Cogs/tree/master/quickrolecreate)
+##### Requirements: None
 A cog that quickly creates a role with no permissions, a name and a color.
 ## [Unit Converter](https://github.com/pwnulatr/Pwning-Cogs/tree/master/unitconverter)
+##### Requirements: None
 A cog that converts from one unit of measurement to another and displays the
 result in chat.
