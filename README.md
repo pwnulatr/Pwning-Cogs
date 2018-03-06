@@ -7,7 +7,7 @@ and what they do.
 
 If you would like to add my repo, use this command in Discord:
 
-`[p]cog repo add pwning-cogs https://github.com/pwnulatr/Pwning-Cogs`
+`[p]cog repo add Pwning-Cogs https://github.com/Pwnulatr/Pwning-Cogs`
 ## [Date Status Timer](https://github.com/pwnulatr/Pwning-Cogs/tree/master/datestatustimer)
 ##### Requirements: None
 A cog that will count down the days to an event that only the owner can set.
