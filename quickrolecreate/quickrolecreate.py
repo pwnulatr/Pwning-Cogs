@@ -3,13 +3,16 @@ from discord.ext import commands
 from .utils import checks
 from discord.ext.commands import converter
 
+__author__ = "Pwnulatr"
+__version__ = "0.1.1"
+
 
 class Quickrolecreate:
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command(name="createrole", no_pm=True, pass_context=True)
-    @checks.admin_or_permissions()
+    @checks.admin_or_permissions(manage_server=True)
     async def createrole(self, ctx, color: str, *, role_name):
         """Create an empty role with a color"""
 
