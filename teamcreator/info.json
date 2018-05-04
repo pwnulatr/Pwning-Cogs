@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "Pwnulatr",
+    "INSTALL_MSG" : "Successfully installed the cog. Use [p]teams to create your teams from a list of teammates.",
+    "NAME" : "Teamcreator",
+    "SHORT" : "Shuffles teams for private matches",
+    "DESCRIPTION" : "Creates an embed message from a list of names, shuffling the members of each team."
+}

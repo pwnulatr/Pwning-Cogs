@@ -21,6 +21,9 @@ A cog that tells tells you if it is a specific holiday when you ask.
 ## [Quick Role Create](https://github.com/pwnulatr/Pwning-Cogs/tree/master/quickrolecreate)
 ##### Requirements: None
 A cog that quickly creates a role with no permissions, a name and a color.
+## [Team Creator](https://github.com/pwnulatr/Pwning-Cogs/tree/master/teamcreator)
+##### Requirements: None
+A cog that creates 2 teams based on a list of items/users.
 ## [Unit Converter](https://github.com/pwnulatr/Pwning-Cogs/tree/master/unitconverter)
 ##### Requirements: None
 A cog that converts from one unit of measurement to another and displays the
