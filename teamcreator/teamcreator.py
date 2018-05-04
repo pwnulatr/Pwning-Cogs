@@ -1,10 +1,10 @@
 import discord
 from discord.ext import commands
 from .utils.chat_formatting import escape_mass_mentions
-# from __main__ import send_cmd_help
-# from cogs.utils import checks
 from random import choice, shuffle
 
+__author__ = "Pwnulatr"
+__version__ = "0.1.1"
 
 class Teamcreator:
     def __init__(self, bot):
@@ -15,6 +15,9 @@ class Teamcreator:
         """Creates random teams from players in a list"""
 
         players = [escape_mass_mentions(c) for c in players]
+
+        await self.bot.type()
+
         if len(players) < 2:
             await self.bot.say("Not enough members")
         else:
@@ -27,7 +30,12 @@ class Teamcreator:
             embed.add_field(name="Team 1", value="\n".join(team1))
             embed.add_field(name="Team 2", value="\n".join(team2))
 
-            await self.bot.say(embed=embed)
+            try:
+                await self.bot.say(embed=embed)
+            except discord.HTTPException:
+                await self.bot.say(f"Team 1:```\n{team1}```Team 2:```{team2}```For better looking, fancy "
+                                   f"*embedded messages* please give me the `Embed Links` permission for "
+                                   f"future queries.")
 
 
 def setup(bot):
