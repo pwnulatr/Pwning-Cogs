@@ -4,7 +4,7 @@ from .utils.chat_formatting import escape_mass_mentions
 from random import choice, shuffle
 
 __author__ = "Pwnulatr"
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 class Teamcreator:
     def __init__(self, bot):
@@ -36,6 +36,7 @@ class Teamcreator:
                 await self.bot.say(f"Team 1:```\n{team1}```Team 2:```{team2}```For better looking, fancy "
                                    f"*embedded messages* please give me the `Embed Links` permission for "
                                    f"future queries.")
+                return
 
 
 def setup(bot):
