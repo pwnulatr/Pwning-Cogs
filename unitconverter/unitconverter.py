@@ -4,7 +4,7 @@ from discord.ext import commands
 from __main__ import send_cmd_help
 
 __author__ = "Pwnulatr"
-__version__ = "0.2.1"
+__version__ = "0.3.0"
 
 
 class UnitConverter:
@@ -481,6 +481,24 @@ class UnitConverter:
 
         await self.bot.say(f"Your converted currency is `{solved} Silver`")
 
+# -----------------------------------------------------------------------------
+    @currency.command(name="vbucks2usd", aliases=["fortnite2usd"], pass_context=False)
+    async def _vbucks2usd_currency(self, userinput: float):
+        """Fortnite VBucks (Premium currency) to US Dollars"""
+
+        mathstuff = userinput / 100
+        solved = round(mathstuff, 2)
+
+        await self.bot.say(f"Your converted currency is `${solved}`")
+
+# -----------------------------------------------------------------------------
+    @currency.command(name="usd2vbucks", pass_context=False)
+    async def _usd2vbucks_currency(self, userinput: int):
+        """US Dollars to Fortnite VBucks (Premium Currency)"""
+
+        solved = userinput * 100
+
+        await self.bot.say(f"Your converted currency is `{solved}`")
 # -----------------------------------------------------------------------------
 # |||||||||||||||||||||||||||||||||||DATA||||||||||||||||||||||||||||||||||||||
 # -----------------------------------------------------------------------------
