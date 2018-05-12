@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "Pwnulatr",
+    "INSTALL_MSG" : "Make sure to get your api key from https://developer.wolframalpha.com/portal/myapps/ \nSet your key with [p]wolframsettings setapikey <key>",
+    "NAME" : "Wolfram",
+    "SHORT" : "Queries the Wolfram Alpha website for text based responses",
+    "DESCRIPTION" : "Query anything you want from the Wolfram Alpha website and the bot will give text based responses."
+}

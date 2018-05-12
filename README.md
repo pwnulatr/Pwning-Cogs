@@ -24,6 +24,9 @@ A cog that quickly creates a role with no permissions, a name and a color.
 ## [Team Creator](https://github.com/pwnulatr/Pwning-Cogs/tree/master/teamcreator)
 ##### Requirements: None
 A cog that creates 2 teams based on a list of items/users.
+## [Wolfram](https://github.com/pwnulatr/Pwning-Cogs/tree/master/wolfram)
+##### Requirements: None
+A cog that queries the Wolfram Alpha API for answering just about anything.
 ## [Unit Converter](https://github.com/pwnulatr/Pwning-Cogs/tree/master/unitconverter)
 ##### Requirements: None
 A cog that converts from one unit of measurement to another and displays the
