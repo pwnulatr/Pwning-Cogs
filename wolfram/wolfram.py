@@ -7,7 +7,7 @@ import aiohttp
 import os
 
 __author__ = "Pwnulatr"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 PATH = "data/pwning-cogs/wolfram/"
 JSON = PATH + "settings.json"
@@ -67,7 +67,7 @@ class Wolfram:
         await self.bot.type()
         sid = ctx.message.server.id
         api_key = self.settings[sid]
-        if api_key not in self.settings:
+        if sid not in self.settings:
             await self.bot.say("The owner has not set their API Key.\n\n"
                                "You can get one from here:\n"
                                "https://developer.wolframalpha.com/portal/myapps/")
