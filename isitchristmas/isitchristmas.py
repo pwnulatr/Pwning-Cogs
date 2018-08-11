@@ -11,7 +11,9 @@ def yes(alternative_choices=[]) -> str:
 
 
 def no() -> str:
-    return choice(["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not", "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не", "Nie", "No way!"])
+    return choice(["No", "Nah", "Nope", "Nu-uh", "Not yet", "Nada", "Nein", "It ain't happening", "Of course not",
+                   "Not today", "How about no", "Not at the moment, young one", "Meh", "hakuna", "нет", "Nee", "не",
+                   "Nie", "No way!"])
 
 
 class Isitchristmas:
@@ -32,15 +34,23 @@ class Isitchristmas:
 
     @isit.command(name="christmas", pass_context=False)
     async def _christmas_isit(self):
-        await self.possibly_say(lambda month, day, _: month == 12 and day == 25, yes_choices=["Holla :christmas_tree: playa :christmas_tree: it :christmas_tree: is :christmas_tree: finally :christmas_tree: Christmas :christmas_tree:", "BUST OUT THAT FIGGY PUDDIN' Y'ALL! IT'S CHRISTMAS!", "Awwww yeeeee C :snowman: H :snowman: R :snowman: I :snowman: S :snowman: T :snowman: M :snowman: A :snowman: S"])
+        await self.possibly_say(lambda month, day, _: month == 12 and day == 25, yes_choices=[
+            "Holla :christmas_tree: playa :christmas_tree: it :christmas_tree: is :christmas_tree: finally "
+            ":christmas_tree: Christmas :christmas_tree:", "BUST OUT THAT FIGGY PUDDIN' Y'ALL! IT'S CHRISTMAS!",
+            "Awwww yeeeee C :snowman: H :snowman: R :snowman: I :snowman: S :snowman: T :snowman: M :snowman: "
+            "A :snowman: S"])
 
     @isit.command(name="halloween", pass_context=False)
     async def _halloween_isit(self):
-        await self.possibly_say(lambda month, day, _: month == 10 and day == 31, yes_choices=["Spoopy time guise :jack_o_lantern: :ghost: :candy: :skull_crossbones: :spider_web: :skull:", "HAPPY HALL:jack_o_lantern:WEEN", "BUST OUT THE PUMPKIN PIE Y'ALL, IT'S SPOOPY HALLOWEEN TIME!"])
+        await self.possibly_say(lambda month, day, _: month == 10 and day == 31, yes_choices=[
+            "Spoopy time guise :jack_o_lantern: :ghost: :candy: :skull_crossbones: :spider_web: :skull:",
+            "HAPPY HALL:jack_o_lantern:WEEN", "BUST OUT THE PUMPKIN PIE Y'ALL, IT'S SPOOPY HALLOWEEN TIME!"])
 
     @isit.command(name="valentinesday", pass_context=False)
     async def _valentinesday_isit(self):
-        await self.possibly_say(lambda month, day, _: month == 10 and day == 31, yes_choices=["Time for the lovin'", "Time to break out the body pillow ;)", "Time to break out that Marvin Gaye :heart_exclamation:"])
+        await self.possibly_say(lambda month, day, _: month == 10 and day == 31, yes_choices=[
+            "Time for the lovin'", "Time to break out the body pillow ;)",
+            "Time to break out that Marvin Gaye :heart_exclamation:"])
 
     @isit.command(name="aprilfoolsday", pass_context=False)
     async def _aprilfoolsday_isit(self):
@@ -48,11 +58,14 @@ class Isitchristmas:
 
     @isit.command(name="independenceday", pass_context=False)
     async def _independenceday_isit(self):
-        await self.possibly_say(lambda month, day, _: month == 7 and day == 4, yes_choices=["YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!", "U :gun: S :boom: A :fireworks:"])
+        await self.possibly_say(lambda month, day, _: month == 7 and day == 4, yes_choices=[
+            "YEAH 'MERICA'", "FREEEEEEEEEEDOM DAY!!!", "LIBERRTYYYYY AND JUSTICE!!!!!!!!",
+            "U :gun: S :boom: A :fireworks:"])
 
     @isit.command(name="thanksgiving", pass_context=False)
     async def _thanksgiving_isit(self):
-        await self.possibly_say(lambda month, day, weekday: month == 1 and weekday == 3 and day in list(range(22, 29)), yes_choices=["Happy Turkey Day!", "Y :turkey: E :turkey: S"])
+        await self.possibly_say(lambda month, day, weekday: month == 1 and weekday == 3 and day in list(range(22, 29)),
+                                yes_choices=["Happy Turkey Day!", "Y :turkey: E :turkey: S"])
 
     @isit.command(name="thanksgivingincanada", pass_context=False)
     async def _thanksgivingincanada_isit(self):
