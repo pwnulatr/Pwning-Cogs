@@ -1,5 +1,3 @@
-# isitchristmas coded by Pwnulatr as a personal test to learn python and put
-# it to use :)
 from discord.ext import commands
 from __main__ import send_cmd_help
 from random import choice
@@ -85,5 +83,4 @@ class Isitchristmas:
 
 
 def setup(bot):
-    n = Isitchristmas(bot)
-    bot.add_cog(n)
+    bot.add_cog(Isitchristmas(bot))
