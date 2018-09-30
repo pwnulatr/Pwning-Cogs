@@ -1,10 +1,11 @@
 import discord
 from discord.ext import commands
 from .utils.chat_formatting import escape_mass_mentions
-from random import choice, shuffle
+from random import shuffle
 
 __author__ = "Pwnulatr"
-__version__ = "0.1.2"
+__version__ = "0.2.0"
+
 
 class Teamcreator:
     def __init__(self, bot):
@@ -14,19 +15,16 @@ class Teamcreator:
     async def teams(self, ctx, *players):
         """Creates random teams from players in a list"""
 
-        players = [escape_mass_mentions(c) for c in players]
-
         await self.bot.type()
-
+        players = [escape_mass_mentions(c) for c in players]
         if len(players) < 2:
             await self.bot.say("Not enough members")
         else:
             shuffle(players)
             team1 = players[::2]
             team2 = players[1::2]
-            author = ctx.message.author
 
-            embed = discord.Embed(colour=author.colour)
+            embed = discord.Embed(colour=ctx.message.author.colour)
             embed.add_field(name="Team 1", value="\n".join(team1))
             embed.add_field(name="Team 2", value="\n".join(team2))
 
@@ -40,5 +38,4 @@ class Teamcreator:
 
 
 def setup(bot):
-    n = Teamcreator(bot)
-    bot.add_cog(n)
+    bot.add_cog(Teamcreator(bot))
