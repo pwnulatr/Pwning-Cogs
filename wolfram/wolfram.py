@@ -48,7 +48,7 @@ class Wolfram:
 
         if len(key) is 17:
             test = self.root_api_url + key + "&i=test"
-            async with aiohttp.get(test) as r:
+            async with aiohttp.get(test) as r:  # TODO completely replace this method as it's deprecated
                 data = await r.text()
             if data != "Error 1: Invalid appid":
                 self.settings[sid] = key
@@ -76,7 +76,7 @@ class Wolfram:
         encoded_text = quote_plus(query)
         full_query = self.root_api_url + api_key + "&i=" + encoded_text
 
-        async with aiohttp.get(full_query) as r:
+        async with aiohttp.get(full_query) as r:  # TODO completely replace this method as it's deprecated
             data = await r.text()
 
         await self.bot.say(data)

@@ -6,6 +6,7 @@ from random import choice, shuffle
 __author__ = "Pwnulatr"
 __version__ = "0.1.2"
 
+
 class Teamcreator:
     def __init__(self, bot):
         self.bot = bot
@@ -37,8 +38,3 @@ class Teamcreator:
                                    f"*embedded messages* please give me the `Embed Links` permission for "
                                    f"future queries.")
                 return
-
-
-def setup(bot):
-    n = Teamcreator(bot)
-    bot.add_cog(n)

@@ -37,8 +37,3 @@ class Quickrolecreate:
             except discord.HTTPException:
                 await self.bot.say("Could not make request.")
                 return
-
-
-def setup(bot):
-    n = Quickrolecreate(bot)
-    bot.add_cog(n)

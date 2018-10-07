@@ -80,7 +80,3 @@ class Isitchristmas:
     @isit.command(name="canadaday", pass_context=False)
     async def _canadaday_isit(self):
         await self.possibly_say(lambda month, day, _: month == 7 and day == 1)
-
-
-def setup(bot):
-    bot.add_cog(Isitchristmas(bot))
