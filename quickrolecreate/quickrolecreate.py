@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from redbot.core import commands
 from .utils import checks
 from discord.ext.commands import converter
 

@@ -1,5 +1,5 @@
 from __main__ import send_cmd_help
-from discord.ext import commands
+from redbot.core import commands
 from .utils.dataIO import dataIO
 from cogs.utils import checks
 from urllib.parse import quote_plus

@@ -1,6 +1,6 @@
 # Sauce: rapidtables.com, checkyourmath.com & Wikipedia
 # Coded by Pwnulatr with a ton of math help from Exbrandong
-from discord.ext import commands
+from redbot.core import commands
 from __main__ import send_cmd_help
 
 __author__ = "Pwnulatr"

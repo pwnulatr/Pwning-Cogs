@@ -1,7 +1,7 @@
 import os
 import discord
 from datetime import date
-from discord.ext import commands
+from redbot.core import commands
 from .utils.dataIO import dataIO
 
 __author__ = "Pwnulatr"

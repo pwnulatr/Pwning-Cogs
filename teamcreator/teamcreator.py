@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from redbot.core import commands
 from .utils.chat_formatting import escape_mass_mentions
 from random import choice, shuffle
 

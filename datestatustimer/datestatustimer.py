@@ -1,4 +1,4 @@
-from discord.ext import commands
+from redbot.core import commands
 from __main__ import send_cmd_help
 from .utils.dataIO import dataIO
 from datetime import date
